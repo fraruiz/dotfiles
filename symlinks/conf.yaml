@@ -10,10 +10,13 @@
     - $DOTFILES_PATH/shell/bash/themes
 
 - link:
+    ~/.inputrc: shell/.inputrc
     ~/.bash_profile: shell/bash/.bash_profile
     ~/.bashrc: shell/bash/.bashrc
     ~/.zimrc: shell/zsh/.zimrc
     ~/.zlogin: shell/zsh/.zlogin
     ~/.zshenv: shell/zsh/.zshenv
     ~/.zshrc: shell/zsh/.zshrc
-    ~/.inputrc: shell/.inputrc
+    ~/.gitattributes: git/.gitattributes
+    ~/.gitconfig: git/.gitconfig
+    ~/.gitignore_global: git/.gitignore_global

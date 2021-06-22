@@ -21,3 +21,14 @@ docs::parse "$@"
 output::answer "Setting up symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true
 touch "$HOME/.z"
+
+if ! str::contains zsh "$SHELL"; then
+  output::answer "Setting zsh as the default shell"
+  sudo chsh -s "$(command -v zsh)" | log::file "Setting zsh as default shell"
+fi
+
+output::answer "Installing zim"
+zsh "$ZIM_HOME/zimfw.zsh" install | log::file "Installing zim"
+
+output::answer "Installing completions"
+"$DOTLY_PATH/bin/dot" shell zsh reload_completions

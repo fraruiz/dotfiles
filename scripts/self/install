@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/self/utils/install.sh"
+
+export ZIM_HOME="$DOTFILES_PATH/modules/zimfw"
+
+if platform::is_macos; then
+  output::answer "🍎 Setting up macOS platform"
+  install_macos_custom
+fi
+
+script::depends_on docpars fzf zsh python
+
+##? Install and setup dotfiles
+##?
+##? Usage:
+##?    install
+docs::parse "$@"
+
+output::answer "Setting up symlinks"
+"$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true
+touch "$HOME/.z"

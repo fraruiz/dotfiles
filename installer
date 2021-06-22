@@ -136,7 +136,7 @@ if ! command_exists curl; then
 fi
 
 _a "Cloning dotfiles"
-git clone --recurse-submodules --remote-submodules "https://github.com/$DOTFILES_REPOSITORY.git" "$DOTFILES_PATH" 2>&1 | _log "Clone dotfiles"
+git clone --recursive "https://github.com/$DOTFILES_REPOSITORY.git" "$DOTFILES_PATH" 2>&1 | _log "Clone dotfiles"
 
 cd "$DOTFILES_PATH"
 

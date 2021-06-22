@@ -136,13 +136,9 @@ if ! command_exists curl; then
 fi
 
 _a "Cloning dotfiles"
-git clone --recurse-submodules --remote-submodules "https://github.com/$DOTFILES_REPOSITORY.git" "$DOTFILES_PATH" 2>&1 | _log "Adding dotfiles submodule"
+git clone --recurse-submodules --remote-submodules "https://github.com/$DOTFILES_REPOSITORY.git" "$DOTFILES_PATH" 2>&1 | _log "Clone dotfiles"
 
 cd "$DOTFILES_PATH"
-
-_a "Installing dotfiles dependencies"
-git submodule update --init --recursive 2>&1 | _log "Installing dotfiles dependencies"
-
 
 "$PWD/bin/dot" self install
 

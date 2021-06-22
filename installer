@@ -140,11 +140,11 @@ git clone "https://github.com/$DOTFILES_REPOSITORY.git" "$DOTFILES_PATH" 2>&1 | 
 
 
 cd $DOTFILES_PATH
+echo "$PWD"
 
 _a "Installing dotfiles dependencies"
 git submodule update --init --recursive 2>&1 | _log "Installing dotfiles dependencies"
 
-"$PWD/bin/dot" self install
 
 _a "🎉 dotfiles installed correctly! 🎉"
 _a "Please, restart your terminal to see the changes"

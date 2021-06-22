@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-source "$DOTLY_PATH/scripts/core/_main.sh"
-source "$DOTLY_PATH/scripts/package/recipes/_registry.sh"
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/package/recipes/_registry.sh"
 
 ##? Install a package
 ##?
 ##? Usage:
 ##?    add <package_name> [--skip-recipe]
 ##?
-if ! ${DOTLY_INSTALLER:-false}; then
+if ! ${DOTFILES_INSTALLER:-false}; then
   docs::parse "$@"
 fi
 
@@ -20,7 +20,7 @@ package::install() {
 
   platform::command_exists "$package_manager" || exit 3
 
-  local -r file="$DOTLY_PATH/scripts/package/package_managers/$package_manager.sh"
+  local -r file="$DOTFILES_PATH/scripts/package/package_managers/$package_manager.sh"
 
   # unsupported package manager
   [ ! -f "$file" ] && exit 4

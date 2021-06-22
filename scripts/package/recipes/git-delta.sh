@@ -1,5 +1,5 @@
 git-delta::install() {
-  "$DOTLY_PATH/bin/dot" package add git-delta --skip-recipe
+  "$DOTFILES_PATH/bin/dot" package add git-delta --skip-recipe
 }
 
 git-delta::is_installed() {

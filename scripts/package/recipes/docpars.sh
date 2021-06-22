@@ -3,7 +3,7 @@ docpars::install() {
 
   script::depends_on cargo
 
-  "$DOTLY_PATH/bin/dot" package add docpars --skip-recipe
+  "$DOTFILES_PATH/bin/dot" package add docpars --skip-recipe
 }
 
 docpars::is_installed() {

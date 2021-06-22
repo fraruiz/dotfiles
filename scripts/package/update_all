@@ -2,13 +2,13 @@
 
 set -uo pipefail
 
-source "$DOTLY_PATH/scripts/core/_main.sh"
-source "$DOTLY_PATH/scripts/package/src/package_managers/brew.sh"
-source "$DOTLY_PATH/scripts/package/src/package_managers/composer.sh"
-source "$DOTLY_PATH/scripts/package/src/package_managers/gem.sh"
-source "$DOTLY_PATH/scripts/package/src/package_managers/mas.sh"
-source "$DOTLY_PATH/scripts/package/src/package_managers/npm.sh"
-source "$DOTLY_PATH/scripts/package/src/package_managers/pip.sh"
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/package/src/package_managers/brew.sh"
+source "$DOTFILES_PATH/scripts/package/src/package_managers/composer.sh"
+source "$DOTFILES_PATH/scripts/package/src/package_managers/gem.sh"
+source "$DOTFILES_PATH/scripts/package/src/package_managers/mas.sh"
+source "$DOTFILES_PATH/scripts/package/src/package_managers/npm.sh"
+source "$DOTFILES_PATH/scripts/package/src/package_managers/pip.sh"
 
 ##? Update all packages
 ##?
@@ -31,7 +31,7 @@ platform::command_exists rustup && output::h2 '☢️ Rust compiler' && rustup u
 platform::command_exists deno && output::h2 '🦕 deno' && deno upgrade
 platform::command_exists tldr && output::h2 '📜 tldr database' && tldr --update
 
-output::h2 "Zim Framework" && zsh "$DOTLY_PATH/modules/zimfw/zimfw.zsh" upgrade 2>&1 | log::file "Updating Zim"
+output::h2 "Zim Framework" && zsh "$DOTFILES_PATH/modules/zimfw/zimfw.zsh" upgrade 2>&1 | log::file "Updating Zim"
 
 output::empty_line
 output::solution '👌 All your packages have been successfully updated'

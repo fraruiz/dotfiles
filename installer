@@ -140,8 +140,18 @@ git clone --recursive "https://github.com/$DOTFILES_REPOSITORY.git" "$DOTFILES_P
 
 cd "$DOTFILES_PATH"
 
-_a "Fetching dotfiles"
-git fetch --recurse-submodules 2>&1 | _log "Fetching dotfiles dependencies"
+_a "Installing dotfiles dependencies"
+
+cd "$DOTFILES_PATH/modules/z"
+git submodule update --init --recursive 2>&1 | _log "Installing z dependencies"
+
+cd "$DOTFILES_PATH/modules/dotbot"
+git submodule update --init --recursive 2>&1 | _log "Installing dotbot dependencies"
+
+cd "$DOTFILES_PATH/modules/zimfw"
+git submodule update --init --recursive 2>&1 | _log "Installing zimfw dependencies"
+
+cd "$DOTFILES_PATH"
 
 "$PWD/bin/dot" self install
 

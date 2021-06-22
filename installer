@@ -140,6 +140,9 @@ git clone --recursive "https://github.com/$DOTFILES_REPOSITORY.git" "$DOTFILES_P
 
 cd "$DOTFILES_PATH"
 
+_a "Fetching dotfiles"
+git fetch --recurse-submodules 2>&1 | _log "Fetching dotfiles dependencies"
+
 "$PWD/bin/dot" self install
 
 _a "🎉 dotfiles installed correctly! 🎉"

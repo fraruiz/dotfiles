@@ -135,25 +135,5 @@ if ! command_exists curl; then
   fi
 fi
 
-_a "Cloning dotfiles"
-git clone --recursive "https://github.com/$DOTFILES_REPOSITORY.git" "$DOTFILES_PATH" 2>&1 | _log "Clone dotfiles"
-
-cd "$DOTFILES_PATH"
-
-_a "Installing dotfiles dependencies"
-
-cd "$DOTFILES_PATH/modules/z"
-git submodule update --init --recursive 2>&1 | _log "Installing z dependencies"
-
-cd "$DOTFILES_PATH/modules/dotbot"
-git submodule update --init --recursive 2>&1 | _log "Installing dotbot dependencies"
-
-cd "$DOTFILES_PATH/modules/zimfw"
-git submodule update --init --recursive 2>&1 | _log "Installing zimfw dependencies"
-
-cd "$DOTFILES_PATH"
-
-"$PWD/bin/dot" self install
-
 _a "🎉 dotfiles installed correctly! 🎉"
 _a "Please, restart your terminal to see the changes"

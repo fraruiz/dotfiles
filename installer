@@ -62,9 +62,9 @@ command_exists() {
   type "$1" >/dev/null 2>&1
 }
 
-_w "  ┌──────────────────────────────────────┐"
+_w "  ┌────────────────────────────────────────┐"
 _w "~ │ 🚀 Welcome to the ${green}dotfiles${normal} installer! │ ~"
-_w "  └──────────────────────────────────────┘"
+_w "  └────────────────────────────────────────┘"
 _w
 _q "Where do you want your dotfiles to be located? (default ~/.dotfiles)" "DOTFILES_PATH"
 DOTFILES_PATH="${DOTFILES_PATH:-$HOME/.dotfiles}"
@@ -139,6 +139,10 @@ _a "Cloning dotfiles"
 git clone --recurse-submodules --remote-submodules "https://github.com/$DOTFILES_REPOSITORY.git" "$DOTFILES_PATH" 2>&1 | _log "Adding dotfiles submodule"
 
 cd "$DOTFILES_PATH"
+
+_a "Installing dotfiles dependencies"
+git submodule update --init --recursive 2>&1 | _log "Installing dotfiles dependencies"
+
 
 "$PWD/bin/dot" self install
 

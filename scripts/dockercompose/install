@@ -12,11 +12,16 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 if platform::command_exists docker; then
   if ! platform::command_exists docker-compose; then
+
+    FILE=/usr/local/bin/docker-compose
+    if [[ -f "$FILE" ]]; then
+      sudo rm -rf "$FILE" 
+    fi
+  
     if platform::is_linux; then
       COMPOSE_VERSION=`git ls-remote https://github.com/docker/compose | grep refs/tags | grep -oE "[0-9]+\.[0-9][0-9]+\.[0-9]+$" | sort --version-sort | tail -n 1`
-      sudo mkdir /usr/local/bin/docker-compose
-      sudo chmod +x /usr/local/bin/docker-compose
       sudo curl -s -L "https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+      sudo chmod +x /usr/local/bin/docker-compose
     elif platform::is_macos; then
       output::warning "Docker Desktop for Mac includes Compose along with other Docker apps, so Mac users do not need to install Compose separately."
     elif platform::is_macos_arm; then
@@ -24,14 +29,16 @@ if platform::command_exists docker; then
     elif platform::is_wsl; then
       output::warning "Docker Desktop for Windows includes Compose along with other Docker apps, so most Windows users do not need to install Compose separately."
     fi
-  fi
-fi
 
-if platform::command_exists docker-compose; then
-  log::success "Docker Compose installed"
-  output::write "✅ Docker Compose installed"
-else
-  log::error "Docker Compose cant installed"
-  output::error "❌ Docker Compose cant installed"
+    if platform::command_exists docker-compose; then
+      log::success "Docker Compose installed"
+      output::write "✅ Docker Compose installed"
+    else
+      log::error "Docker Compose installation failed"
+      output::error "❌ Docker Compose installation failed"
+    fi
+  else
+    output::write "✔ Docker Compose installed"
+  fi
 fi
 

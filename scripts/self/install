@@ -23,17 +23,17 @@ output::write "Setting up symlinks"
 output::write "Installing zim"
 zsh "$ZIM_HOME/zimfw.zsh" install | log::file "Installing zim"
 
-output::write "Installing completions"
-"$DOTFILES_PATH/bin/dot" shell zsh reload_completions
-
 output::write "Installing languages"
-"$DOTFILES_PATH/bin/dot" languages install
+"$DOTFILES_PATH/bin/dot" languages install | log::file "Installing languages"
 
 output::write "Installing docker"
-"$DOTFILES_PATH/bin/dot" docker install
+"$DOTFILES_PATH/bin/dot" docker install | log::file "Installing docker"
 
 output::write "Installing docker-compose"
-"$DOTFILES_PATH/bin/dot" dockercompose install
+"$DOTFILES_PATH/bin/dot" dockercompose install | log::file "Installing docker-compose"
 
 output::write "Setup workspace folder"
-mkdir "$HOME/Develop"
+mkdir "$HOME/Develop" | log::file "Setuping workspace folder"
+
+output::write "Installing completions"
+"$DOTFILES_PATH/bin/dot" shell zsh reload_completions | log::file "Installing completions"

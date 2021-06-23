@@ -26,12 +26,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
       "$DOTFILES_PATH/bin/dot" package add go
     fi
   fi
-
-  if platform::command_exists go; then
-    log::success "Golang installed"
-  else
-    log::error "Golang installation failed"
-  fi
 else
   output::write "✔ Golang installed"
 fi

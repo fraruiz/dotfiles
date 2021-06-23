@@ -20,12 +20,6 @@ if ! platform::command_exists java; then
     "$DOTFILES_PATH/bin/dot" package add default-jdk
     "$DOTFILES_PATH/bin/dot" package add default-jre
   fi
-
-  if platform::command_exists java; then
-    log::success "Java installed"
-  else
-    log::error "Java installation failed"
-  fi
 else
   output::write "✔ Java installed"
 fi

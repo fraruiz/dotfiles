@@ -27,12 +27,6 @@ if platform::command_exists docker; then
     elif platform::is_wsl; then
       output::warning "Docker Desktop for Windows includes Compose along with other Docker apps, so most Windows users do not need to install Compose separately."
     fi
-
-    if platform::command_exists docker-compose; then
-      log::success "Docker Compose installed"
-    else
-      log::error "Docker Compose installation failed"
-    fi
   else
     output::write "✔ Docker Compose installed"
   fi

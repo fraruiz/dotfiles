@@ -24,7 +24,3 @@ zsh "$ZIM_HOME/zimfw.zsh" install | log::file "Installing zim"
 
 output::write "Installing completions"
 "$DOTFILES_PATH/bin/dot" shell zsh reload_completions | log::file "Installing completions"
-
-if ! str::contains zsh "$SHELL"; then
-  sudo chsh -s "$(command -v zsh)" | log::file "Setting zsh as default shell"
-fi

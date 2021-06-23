@@ -1,1 +1,0 @@
-#!/bin/user/env bash

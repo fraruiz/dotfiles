@@ -12,13 +12,16 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 if ! platform::command_exists docker; then
   bash <(curl -s https://get.docker.com/) 2>&1 | log::append "Installing docker"
-fi
 
-if platform::command_exists docker; then
-  log::success "Docker installed"
-  output::write "✅ Docker installed"
-else
-  log::error "Docker installation failed"
-  output::write "❌ Docker installation failed"
+  if platform::command_exists docker; then
+    log::success "Docker installed"
+    output::write "✅ Docker installed"
+  else
+    log::error "Docker installation failed"
+    output::write "❌ Docker installation failed"
+  fi
+  
+  else
+    output::write "✔ Docker installed"
 fi
 

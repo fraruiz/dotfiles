@@ -22,6 +22,7 @@ if platform::command_exists docker; then
       COMPOSE_VERSION=`git ls-remote https://github.com/docker/compose | grep refs/tags | grep -oE "[0-9]+\.[0-9][0-9]+\.[0-9]+$" | sort --version-sort | tail -n 1`
       sudo curl -s -L "https://github.com/docker/compose/releases/download/${COMPOSE_VERSION}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
       sudo chmod +x /usr/local/bin/docker-compose
+      sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
     elif platform::is_macos; then
       output::warning "Docker Desktop for Mac includes Compose along with other Docker apps, so Mac users do not need to install Compose separately."
     elif platform::is_macos_arm; then

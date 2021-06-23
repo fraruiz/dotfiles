@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Install docker
+##?
+##? Usage:
+##?    install
+##?
+
+if ! platform::command_exists docker; then
+  output::error "docker not installed, trying to install"
+  sudo bash <(curl -s https://get.docker.com/) 2>&1 | log::append "Installing docker"
+fi
+
+if platform::command_exists docker; then
+  log::success "Docker installed"
+  output::write "✅ Docker installed"
+else
+  log::error "Docker installation failed"
+  output::write "❌ Docker installation failed"
+fi
+

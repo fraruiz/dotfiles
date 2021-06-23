@@ -8,6 +8,5 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?   contributors
-docs::parse "$@"
 
 git shortlog --summary --numbered

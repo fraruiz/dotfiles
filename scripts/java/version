@@ -11,4 +11,4 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 
 
-output::write java --version
+output::write java -version

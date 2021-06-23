@@ -27,12 +27,10 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
     fi
   fi
 
-  if platform::command_exists docker; then
+  if platform::command_exists go; then
     log::success "Golang installed"
-    output::write "✅ Golang installed"
   else
     log::error "Golang installation failed"
-    output::write "❌ Golang installation failed"
   fi
 else
   output::write "✔ Golang installed"

@@ -16,10 +16,8 @@ if ! platform::command_exists docker; then
   
   if platform::command_exists docker; then
     log::success "Docker installed"
-    output::write "✅ Docker installed"
   else
     log::error "Docker installation failed"
-    output::write "❌ Docker installation failed"
   fi
 
   else

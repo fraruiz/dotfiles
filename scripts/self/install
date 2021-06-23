@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
-source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 
 export ZIM_HOME="$DOTFILES_PATH/modules/zimfw"
 
@@ -23,20 +22,9 @@ output::write "Setting up symlinks"
 output::write "Installing zim"
 zsh "$ZIM_HOME/zimfw.zsh" install | log::file "Installing zim"
 
-output::write "Installing languages"
-"$DOTFILES_PATH/bin/dot" golang install | log::file "Installing golang"
-"$DOTFILES_PATH/bin/dot" java install | log::file "Installing java"
-
-output::write "Installing docker"
-"$DOTFILES_PATH/bin/dot" docker install | log::file "Installing docker"
-
-output::write "Installing docker-compose"
-"$DOTFILES_PATH/bin/dot" dockercompose install | log::file "Installing docker-compose"
-
-output::write "Setup workspace folder"
-mkdir "$HOME/Develop" | log::file "Setuping workspace folder"
-"$DOTFILES_PATH/bin/dot" vim install | log::file "Installing vim"
-
-
 output::write "Installing completions"
 "$DOTFILES_PATH/bin/dot" shell zsh reload_completions | log::file "Installing completions"
+
+if ! str::contains zsh "$SHELL"; then
+  sudo chsh -s "$(command -v zsh)" | log::file "Setting zsh as default shell"
+fi

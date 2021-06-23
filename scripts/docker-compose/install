@@ -12,13 +12,13 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 if platform::command_exists docker; then
   if ! platform::command_exists docker-compose; then
-
-    FILE=/usr/local/bin/docker-compose
-    if [[ -f "$FILE" ]]; then
-      sudo rm -rf "$FILE" 
-    fi
   
     if platform::is_linux; then
+      FILE=/usr/local/bin/docker-compose
+      if [[ -f "$FILE" ]]; then
+        sudo rm -rf "$FILE" 
+      fi
+      
       "$DOTFILES_PATH/bin/dot" package add docker-compose
     elif platform::is_macos; then
       output::warning "Docker Desktop for Mac includes Compose along with other Docker apps, so Mac users do not need to install Compose separately."
@@ -30,10 +30,8 @@ if platform::command_exists docker; then
 
     if platform::command_exists docker-compose; then
       log::success "Docker Compose installed"
-      output::write "✅ Docker Compose installed"
     else
       log::error "Docker Compose installation failed"
-      output::error "❌ Docker Compose installation failed"
     fi
   else
     output::write "✔ Docker Compose installed"

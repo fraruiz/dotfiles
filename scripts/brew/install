@@ -1,18 +1,23 @@
-#!/bin/user/env bash
+#!/usr/bin/env bash
 
-install_macos_custom() {
-  if ! platform::command_exists brew; then
-    output::error "brew not installed, installing"
+set -euo pipefail
 
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  fi
+source "$DOTFILES_PATH/scripts/core/_main.sh"
 
+##? Install brew
+##?
+##? Usage:
+##?    install
+##?
+
+if ! platform::command_exists brew; then
+  output::error "brew not installed, installing"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   if platform::is_macos_arm; then
     export PATH="$PATH:/opt/homebrew/bin:/usr/local/bin"
   else
     export PATH="$PATH:/usr/local/bin"
   fi
-
   mkdir -p "$HOME/bin"
 
   output::answer "Installing needed gnu packages"
@@ -27,4 +32,17 @@ install_macos_custom() {
 
   output::answer "Installing mas"
   brew list mas || brew install mas | log::file "Installing mas"
-}
+
+  if platform::command_exists brew; then
+    log::success "Brew installed"
+    output::write "✅ Brew installed"
+  else
+    log::error "Brew installation failed"
+    output::write "❌ Brew installation failed"
+  fi
+
+else
+  output::write "✔ Brew installed"
+fi
+
+

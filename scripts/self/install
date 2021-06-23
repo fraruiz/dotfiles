@@ -7,7 +7,7 @@ export ZIM_HOME="$DOTFILES_PATH/modules/zimfw"
 
 if platform::is_macos; then
   output::write "🍎 Setting up macOS platform"
-  install_macos_custom
+  "$DOTFILES_PATH/bin/dot" brew install | log::file "Setting up macOS platform" || true
 fi
 
 script::depends_on fzf zsh

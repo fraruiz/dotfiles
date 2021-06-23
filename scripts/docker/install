@@ -12,8 +12,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 if ! platform::command_exists docker; then
   sudo bash <(curl -s https://get.docker.com/) 2>&1 | log::append "Installing docker"
-  sudo groupadd docker
-  sudo usermod -aG docker $USER
+  sudo groupadd docker | log::append "Group add docker"
+  sudo usermod -aG docker $USER  | log::append "Usermod docker user"
   newgrp docker
   
   if platform::command_exists docker; then

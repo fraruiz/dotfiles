@@ -17,15 +17,14 @@ script::depends_on fzf zsh
 ##? Usage:
 ##?    install
 
-output::write "Setting up symlinks"
-"$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true
-touch "$HOME/.z"
-
 output::write "Installing zim"
 zsh "$ZIM_HOME/zimfw.zsh" install | log::file "Installing zim"
 
 output::write "Installing completions"
 "$DOTFILES_PATH/bin/dot" shell zsh reload_completions
+
+output::write "Setting up symlinks"
+"$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true
 
 output::write "Installing languages"
 "$DOTFILES_PATH/bin/dot" languages install

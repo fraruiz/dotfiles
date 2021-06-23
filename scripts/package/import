@@ -10,7 +10,6 @@ source "$DOTFILES_PATH/scripts/package/src/dump.sh"
 ##?
 ##? Usage:
 ##?   import
-docs::parse "$@"
 
 output::write "🎩 Let's import your packages (this could take a while)"
 

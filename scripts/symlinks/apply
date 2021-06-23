@@ -9,7 +9,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?    apply
 ##?
-docs::parse "$@"
 
 source "$DOTFILES_PATH/symlinks/links.sh"
 

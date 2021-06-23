@@ -9,7 +9,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?    install
 ##?
-docs::parse "$@"
 
 if ! platform::command_exists java; then
   if platform::command_exists apt; then

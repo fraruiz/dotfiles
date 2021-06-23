@@ -14,7 +14,6 @@ source "$DOTFILES_PATH/scripts/package/src/package_managers/pip.sh"
 ##?
 ##? Usage:
 ##?   update_all
-docs::parse "$@"
 
 output::h1_without_margin "♻️  Updating all the apps on your system"
 output::write "If you want to debug what's happening behind the scenes, you can execute \`dot self debug\` in parallel."

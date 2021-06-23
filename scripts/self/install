@@ -27,7 +27,6 @@ output::write "Installing languages"
 "$DOTFILES_PATH/bin/dot" golang install | log::file "Installing golang"
 "$DOTFILES_PATH/bin/dot" java install | log::file "Installing java"
 
-
 output::write "Installing docker"
 "$DOTFILES_PATH/bin/dot" docker install | log::file "Installing docker"
 

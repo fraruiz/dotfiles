@@ -27,21 +27,25 @@ languages:install_java() {
 
 
 languages:install_golang() {
-  if platform::is_macos; then
-    "$DOTFILES_PATH/bin/dot" package add go
-  elif platform::is_macos_arm; then
-    "$DOTFILES_PATH/bin/dot" package add go
-  else
-    if platform::command_exists apt; then
-      "$DOTFILES_PATH/bin/dot" package add golang-go
-    elif platform::command_exists dnf; then
-      "$DOTFILES_PATH/bin/dot" package add golang
-    elif platform::command_exists yum; then
-      "$DOTFILES_PATH/bin/dot" package add golang
-    elif platform::command_exists pacman; then
-      "$DOTFILES_PATH/bin/dot" package add go
+    if ! platform::command_exists go; then
+      if platform::is_macos; then
+        "$DOTFILES_PATH/bin/dot" package add go
+      elif platform::is_macos_arm; then
+        "$DOTFILES_PATH/bin/dot" package add go
+      else
+        if platform::command_exists apt; then
+          "$DOTFILES_PATH/bin/dot" package add golang-go
+        elif platform::command_exists dnf; then
+          "$DOTFILES_PATH/bin/dot" package add golang
+        elif platform::command_exists yum; then
+          "$DOTFILES_PATH/bin/dot" package add golang
+        elif platform::command_exists pacman; then
+          "$DOTFILES_PATH/bin/dot" package add go
+        fi
+      fi
+    else
+      output::write "✔ Golang installed"
     fi
-  fi
 }
 
 

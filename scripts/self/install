@@ -23,8 +23,6 @@ output::write "Setting up symlinks"
 output::write "Installing zim"
 zsh "$ZIM_HOME/zimfw.zsh" install | log::file "Installing zim"
 
-ln -s $DOTFILES_PATH/shell/zsh/.zimrc ~/.zimrc
-
 output::write "Installing languages"
 "$DOTFILES_PATH/bin/dot" languages install
 

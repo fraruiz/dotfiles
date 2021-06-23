@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Install vim
+##?
+##? Usage:
+##?    install
+##?
+
+if ! platform::command_exists vim; then
+  "$DOTFILES_PATH/bin/dot" package add vim
+
+  if platform::command_exists docker; then
+    log::success "Vim installed"
+    output::write "✅ Vim installed"
+  else
+    log::error "Vim installation failed"
+    output::write "❌ Vim installation failed"
+  fi
+else
+  output::write "✔ Vim installed"
+fi

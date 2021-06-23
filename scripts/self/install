@@ -35,6 +35,8 @@ output::write "Installing docker-compose"
 
 output::write "Setup workspace folder"
 mkdir "$HOME/Develop" | log::file "Setuping workspace folder"
+"$DOTFILES_PATH/bin/dot" vim install | log::file "Installing vim"
+
 
 output::write "Installing completions"
 "$DOTFILES_PATH/bin/dot" shell zsh reload_completions | log::file "Installing completions"

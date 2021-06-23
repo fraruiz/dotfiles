@@ -13,7 +13,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 git add -A
 
-if [ -z "$1" ]; then
+if [ $# -ge 1 ] && [ -n "$1" ]; then
   git commit
 else
   git commit -m"$1"

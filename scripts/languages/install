@@ -29,7 +29,7 @@ output::write "✅ Java installed"
 
 if ! platform::command_exists go; then
   if platform::command_exists apt; then
-    sudo apt -y install golang 2>&1 | log::append "Installing golang"
+    sudo apt -y install golang-go 2>&1 | log::append "Installing golang"
   elif platform::command_exists dnf; then
     sudo dnf -y install golang 2>&1 | log::append "Installing golang"
   elif platform::command_exists yum; then
@@ -37,7 +37,7 @@ if ! platform::command_exists go; then
   elif platform::command_exists brew; then
     yes | brew install go 2>&1 | log::append "Installing golang"
   elif platform::command_exists pacman; then
-    sudo pacman -S --noconfirm golang 2>&1 | log::append "Installing golang"
+    sudo pacman -S --noconfirm go 2>&1 | log::append "Installing golang"
   fi
 fi
 

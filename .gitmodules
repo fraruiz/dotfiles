@@ -1,6 +1,3 @@
-[submodule "modules/dotbot"]
-	path = modules/dotbot
-	url = https://github.com/anishathalye/dotbot.git
 [submodule "modules/z"]
 	path = modules/z
 	url = https://github.com/rupa/z.git

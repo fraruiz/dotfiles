@@ -34,5 +34,4 @@ output::answer "Installing completions"
 "$DOTFILES_PATH/bin/dot" shell zsh reload_completions
 
 output::answer "Installing languages"
-install_java
-install_golang
+"$DOTFILES_PATH/bin/dot" languages isntall

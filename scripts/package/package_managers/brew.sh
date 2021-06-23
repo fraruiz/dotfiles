@@ -1,2 +1,3 @@
 brew::install() {
+    brew install "$@"
 }

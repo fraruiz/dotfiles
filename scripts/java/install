@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Install java
+##?
+##? Usage:
+##?    install
+##?
+
+
+if ! platform::command_exists java; then
+  if platform::is_macos; then
+    "$DOTFILES_PATH/bin/dot" package add openjdk
+  elif platform::is_macos_arm; then
+    "$DOTFILES_PATH/bin/dot" package add openjdk
+  else
+    "$DOTFILES_PATH/bin/dot" package add default-jdk
+    "$DOTFILES_PATH/bin/dot" package add default-jre
+  fi
+
+  if platform::command_exists docker; then
+    log::success "Java installed"
+    output::write "✅ Java installed"
+  else
+    log::error "Java installation failed"
+    output::write "❌ Java installation failed"
+  fi
+else
+  output::write "✔ Java installed"
+fi

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Install version
+##?
+##? Usage:
+##?    version
+##?
+
+
+output::write java --version

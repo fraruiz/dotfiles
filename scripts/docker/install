@@ -11,7 +11,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 
 if ! platform::command_exists docker; then
-  output::error "docker not installed, trying to install"
   bash <(curl -s https://get.docker.com/) 2>&1 | log::append "Installing docker"
 fi
 

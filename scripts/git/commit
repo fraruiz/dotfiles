@@ -11,6 +11,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   commit
 ##?   commit <message>
 
+docs::eval "$@"
+
 git add -A
 
 if [ $# -ge 1 ] && [ -n "$1" ]; then

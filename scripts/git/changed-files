@@ -9,4 +9,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   changed-filed
 
+docs::eval "$@"
+
 git diff --name-only master

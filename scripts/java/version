@@ -10,5 +10,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?    version
 ##?
 
+docs::eval "$@"
 
 output::write java -version

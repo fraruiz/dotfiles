@@ -9,6 +9,8 @@ source "$DOTFILES_PATH/scripts/package/recipes/_registry.sh"
 ##?    add <package_name> [--skip-recipe]
 ##?
 
+docs::eval "$@"
+
 package::install() {
   local -r package_manager="$1"
   local -r package_to_install="$2"

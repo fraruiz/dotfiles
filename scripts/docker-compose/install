@@ -4,11 +4,13 @@ set -euo pipefail
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
-##? Install docker
+##? Install docker-compose
 ##?
 ##? Usage:
 ##?    install
 ##?
+
+docs::eval "$@"
 
 if platform::command_exists docker; then
   if ! platform::command_exists docker-compose; then

@@ -9,4 +9,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   apply-gitignore
 
+docs::eval "$@"
+
 git ls-files --ignored --exclude-standard | xargs git rm --cached

@@ -10,6 +10,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?    install
 ##?
 
+docs::eval "$@"
+
 if ! platform::command_exists vim; then
   "$DOTFILES_PATH/bin/dot" package add vim
 else

@@ -10,6 +10,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   zsh reload_completions
 ##?   zsh clean_cache
 
+docs::eval "$@"
+
 case $1 in
 "optimize")
   asl_conf=$(sed 's/notice] store/critical] store/g' /etc/asl.conf)

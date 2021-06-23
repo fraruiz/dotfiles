@@ -12,6 +12,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?    dot <context>
 ##?    dot <context> <cmd> [<args>...]
 
+docs::eval "$@"
+
 list_command_paths() {
   find "$DOTFILES_PATH/scripts" -maxdepth 2 -perm +111 -type f |
     grep -v core |

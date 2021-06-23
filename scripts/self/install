@@ -9,7 +9,7 @@ if platform::is_macos; then
   "$DOTFILES_PATH/bin/dot" brew install | log::file "Setting up macOS platform" || true
 fi
 
-script::depends_on fzf zsh
+script::depends_on fzf zsh python
 
 ##? Install and setup dotfiles
 ##?

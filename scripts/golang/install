@@ -10,6 +10,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?    install
 ##?
 
+docs::eval "$@"
+
  if ! platform::command_exists go; then
   if platform::is_macos; then
     brew install go

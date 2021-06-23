@@ -10,6 +10,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?    install
 ##?
 
+docs::eval "$@"
+
 if ! platform::command_exists brew; then
   output::error "brew not installed, installing"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

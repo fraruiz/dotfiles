@@ -9,6 +9,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   pretty-log
 
+docs::eval "$@"
+
 commit=$(
   git log --graph \
     --color=always \

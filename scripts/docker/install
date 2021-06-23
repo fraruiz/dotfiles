@@ -4,11 +4,13 @@ set -euo pipefail
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
-##? Install docker
+##? Install docker from https://get.docker.com/
 ##?
 ##? Usage:
 ##?    install
 ##?
+
+docs::eval "$@"
 
 if ! platform::command_exists docker; then
   log::append "Installing docker"

@@ -14,11 +14,22 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 if ! platform::command_exists java; then
   if platform::is_macos; then
     "$DOTFILES_PATH/bin/dot" package add openjdk
-  elif platform::is_macos_arm; then
-    "$DOTFILES_PATH/bin/dot" package add openjdk
   else
-    "$DOTFILES_PATH/bin/dot" package add default-jdk
-    "$DOTFILES_PATH/bin/dot" package add default-jre
+    if platform::command_exists apt; then
+      sudo apt -y install default-jdk default-jre
+    elif platform::command_exists dnf; then
+      sudo dnf -y install default-jdk default-jre
+    elif platform::command_exists yum; then
+      yes | sudo yum install default-jdk default-jre
+    elif platform::command_exists pacman; then
+      sudo pacman -S --noconfirm default-jdk default-jre
+    fi
+  fi
+
+  if platform::command_exists docker; then
+    log::success "Java installed"
+  else
+    log::error "Java installation failed"
   fi
 else
   output::write "✔ Java installed"

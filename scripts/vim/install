@@ -12,12 +12,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 if ! platform::command_exists vim; then
   "$DOTFILES_PATH/bin/dot" package add vim
-
-  if platform::command_exists vim; then
-    log::success "Vim installed"
-  else
-    log::error "Vim installation failed"
-  fi
 else
   output::write "✔ Vim installed"
 fi

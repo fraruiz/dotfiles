@@ -1,0 +1,6 @@
+Pythonid
+name.kropp.intellij.makefile
+net.ashald.envfile
+org.jetbrains.plugins.go
+ru.adelf.idea.dotenv
+tv.codely.codelytv-theme

@@ -9,5 +9,3 @@ ln -s $DOTFILES_PATH/git/.gitattributes ~/.gitattributes
 ln -s $DOTFILES_PATH/git/.gitconfig ~/.gitconfig
 ln -s $DOTFILES_PATH/git/.gitignore_global ~/.gitignore_global
 ln -s $DOTFILES_PATH/editors/.vimrc ~/.vimrc
-ln -s $DOTFILES_PATH/shell/bash/.bash_profile ~/.bash_profile
-ln -s $DOTFILES_PATH/shell/bash/.bashrc ~/.bashrc

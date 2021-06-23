@@ -6,7 +6,7 @@ source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 export ZIM_HOME="$DOTFILES_PATH/modules/zimfw"
 
 if platform::is_macos; then
-  output::answer "🍎 Setting up macOS platform"
+  output::write "🍎 Setting up macOS platform"
   install_macos_custom
 fi
 
@@ -18,20 +18,20 @@ script::depends_on docpars fzf zsh python
 ##?    install
 docs::parse "$@"
 
-output::answer "Setting up symlinks"
+output::write "Setting up symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true
 touch "$HOME/.z"
 
 if ! str::contains zsh "$SHELL"; then
-  output::answer "Setting zsh as the default shell"
+  output::write "Setting zsh as the default shell"
   sudo chsh -s "$(command -v zsh)" | log::file "Setting zsh as default shell"
 fi
 
-output::answer "Installing zim"
+output::write "Installing zim"
 zsh "$ZIM_HOME/zimfw.zsh" install | log::file "Installing zim"
 
-output::answer "Installing completions"
+output::write "Installing completions"
 "$DOTFILES_PATH/bin/dot" shell zsh reload_completions
 
-output::answer "Installing languages"
+output::write "Installing languages"
 "$DOTFILES_PATH/bin/dot" languages isntall

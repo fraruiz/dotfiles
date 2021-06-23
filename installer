@@ -144,6 +144,7 @@ cd $DOTFILES_PATH
 _a "Installing dotfiles dependencies"
 git submodule update --init --recursive 2>&1 | _log "Installing dotfiles dependencies"
 
+chmod u+x "$PWD/bin/dot"
 "$PWD/bin/dot" self install
 
 _a "🎉 dotfiles installed correctly! 🎉"

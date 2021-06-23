@@ -21,11 +21,6 @@ output::write "Setting up symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true
 touch "$HOME/.z"
 
-if ! str::contains zsh "$SHELL"; then
-  output::write "Setting zsh as the default shell"
-  sudo chsh -s "$(command -v zsh)" | log::file "Setting zsh as default shell"
-fi
-
 output::write "Installing zim"
 zsh "$ZIM_HOME/zimfw.zsh" install | log::file "Installing zim"
 

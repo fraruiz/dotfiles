@@ -12,14 +12,4 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 source "$DOTFILES_PATH/symlinks/links.sh"
 
-if platform::is_macos; then
-  if platform::is_macos_arm; then
-    source "$DOTFILES_PATH/symlinks/links_macos.sh"
-  else
-    source "$DOTFILES_PATH/symlinks/links_macos_intel.sh"
-  fi
-else
-  source "$DOTFILES_PATH/symlinks/links_linux.sh"
-fi
-
 log::success "Done!"

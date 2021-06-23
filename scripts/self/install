@@ -28,4 +28,4 @@ output::write "Installing completions"
 "$DOTFILES_PATH/bin/dot" shell zsh reload_completions
 
 output::write "Installing languages"
-"$DOTFILES_PATH/bin/dot" languages isntall
+"$DOTFILES_PATH/bin/dot" languages install

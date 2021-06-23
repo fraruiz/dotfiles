@@ -10,19 +10,23 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?    install
 ##?
 
-java() {
-  if platform::is_macos; then
-    "$DOTFILES_PATH/bin/dot" package add openjdk
-  elif platform::is_macos_arm; then
-    "$DOTFILES_PATH/bin/dot" package add openjdk
+languages:install_java() {
+  if ! platform::command_exists java; then
+    if platform::is_macos; then
+      "$DOTFILES_PATH/bin/dot" package add openjdk
+    elif platform::is_macos_arm; then
+      "$DOTFILES_PATH/bin/dot" package add openjdk
+    else
+      "$DOTFILES_PATH/bin/dot" package add default-jdk
+      "$DOTFILES_PATH/bin/dot" package add default-jre
+    fi
   else
-    "$DOTFILES_PATH/bin/dot" package add default-jdk
-    "$DOTFILES_PATH/bin/dot" package add default-jre
+    output::write "✔ Java installed"
   fi
 }
 
 
-golang() {
+languages:install_golang() {
   if platform::is_macos; then
     "$DOTFILES_PATH/bin/dot" package add go
   elif platform::is_macos_arm; then
@@ -41,5 +45,5 @@ golang() {
 }
 
 
-java
-golang
+languages:install_java
+languages:install_golang

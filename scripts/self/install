@@ -10,7 +10,7 @@ if platform::is_macos; then
   install_macos_custom
 fi
 
-script::depends_on docpars fzf zsh python
+script::depends_on fzf zsh
 
 ##? Install and setup dotfiles
 ##?

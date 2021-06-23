@@ -8,9 +8,7 @@ source "$DOTFILES_PATH/scripts/package/recipes/_registry.sh"
 ##? Usage:
 ##?    add <package_name> [--skip-recipe]
 ##?
-if ! ${DOTFILES_INSTALLER:-false}; then
-  docs::parse "$@"
-fi
+docs::parse "$@"
 
 package::install() {
   local -r package_manager="$1"

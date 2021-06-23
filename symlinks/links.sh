@@ -1,5 +1,7 @@
 #!/bin/user/env bash
 
+
+
 ln -s $DOTFILES_PATH/shell/.inputrc ~/.inputrc
 ln -s $DOTFILES_PATH/shell/zsh/.zimrc ~/.zimrc
 ln -s $DOTFILES_PATH/shell/zsh/.zlogin ~/.zlogin

@@ -9,7 +9,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   pretty-diff
 
-docs::eval "$@"
+docs::parse "$@"
 
 if (! git::is_in_repo); then
   echo "Not in a git repo!"

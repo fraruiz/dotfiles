@@ -9,12 +9,14 @@ if platform::is_macos; then
   "$DOTFILES_PATH/bin/dot" brew install | log::file "Setting up macOS platform" || true
 fi
 
-script::depends_on fzf zsh python
+script::depends_on fzf zsh python cargo docpars
 
 ##? Install and setup dotfiles
 ##?
 ##? Usage:
 ##?    install
+
+docs::parse "$@"
 
 output::write "Setting up symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true

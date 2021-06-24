@@ -10,7 +10,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   zsh reload_completions
 ##?   zsh clean_cache
 
-docs::eval "$@"
+docs::parse "$@"
 
 case $1 in
 "optimize")

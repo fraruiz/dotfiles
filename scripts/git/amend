@@ -9,7 +9,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   amend
 
-docs::eval "$@"
+docs::parse "$@"
 
 git add -A
 git commit --amend

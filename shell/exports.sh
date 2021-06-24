@@ -22,6 +22,7 @@ export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
 export path=(
   "$HOME/bin"
   "$DOTFILES_PATH/bin"
+  "$HOME/.cargo/bin"
   "/opt/homebrew/bin"
   "/usr/local/bin"
   "/usr/local/sbin"

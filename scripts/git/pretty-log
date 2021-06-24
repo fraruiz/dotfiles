@@ -9,7 +9,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   pretty-log
 
-docs::eval "$@"
+docs::parse "$@"
 
 commit=$(
   git log --graph \

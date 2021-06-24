@@ -11,7 +11,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   commit
 ##?   commit <message>
 
-docs::eval "$@"
+docs::parse "$@"
 
 git add -A
 

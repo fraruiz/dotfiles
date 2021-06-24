@@ -11,6 +11,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   rm-file-history <file>
 
-docs::eval "$@"
+docs::parse "$@"
 
 git filter-branch --index-filter 'git rm --cached --ignore-unmatch $1' HEAD

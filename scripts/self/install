@@ -4,19 +4,23 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 export ZIM_HOME="$DOTFILES_PATH/modules/zimfw"
 
-if platform::is_macos; then
-  output::write "🍎 Setting up macOS platform"
-  "$DOTFILES_PATH/bin/dot" brew install | log::file "Setting up macOS platform" || true
-fi
-
-script::depends_on fzf zsh python cargo docpars
-
 ##? Install and setup dotfiles
 ##?
 ##? Usage:
 ##?    install
 
 docs::parse "$@"
+
+if platform::is_macos; then
+  output::write "🍎 Setting up macOS platform"
+  "$DOTFILES_PATH/bin/dot" brew install | log::file "Setting up macOS platform" || true
+fi
+
+script::depends_on cargo
+
+export PATH="$HOME/.cargo/bin:$PATH"
+
+script::depends_on docpars fzf zsh python
 
 output::write "Setting up symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true

@@ -14,16 +14,6 @@
 	branch = auto
 	ui = true
 
-[core]
-	excludesfile = ~/.gitignore_global
-	attributesfile = ~/.gitattributes
-	editor = vim
-	autocrlf = input
-	trustctime = false
-	precomposeunicode = false
-	pager = delta --dark
-	ignorecase = false
-
 [delta]
     features = line-numbers decorations
     whitespace-error-style = 22 reverse
@@ -32,6 +22,15 @@
     commit-decoration-style = bold yellow box ul
     file-style = bold yellow ul
     file-decoration-style = none
+
+[core]
+	excludesfile = ~/.gitignore_global
+	attributesfile = ~/.gitattributes
+	editor = vim
+	autocrlf = input
+	trustctime = false
+	precomposeunicode = false
+	ignorecase = false
 
 [help]
 	autocorrect = 1

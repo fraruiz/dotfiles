@@ -28,6 +28,13 @@ platform::ensure_environment(){
   else
     platform::ensure_linux_environment
   fi
+
+  if ! platform::command_exists cargo; then
+    echo "> Installing cargo 📦"
+    curl https://sh.rustup.rs -sSf | sh
+  fi
+
+  export PATH="$HOME/.cargo/bin:$PATH"
 }
 
 platform::ensure_linux_environment(){
@@ -36,8 +43,7 @@ platform::ensure_linux_environment(){
 
 platform::ensure_macos_environment(){
   if ! platform::command_exists brew; then
-    output::error "brew not installed, installing"
-
+    echo "> Installing brew 🍻"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
     if platform::is_macos_arm; then

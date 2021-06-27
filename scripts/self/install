@@ -11,11 +11,8 @@ export ZIM_HOME="$DOTFILES_PATH/modules/zimfw"
 
 docs::parse "$@"
 
+output::write "Setting up environment 🛠️"
 platform::ensure_environment
-
-script::depends_on cargo
-
-export PATH="$HOME/.cargo/bin:$PATH"
 
 script::depends_on docpars fzf zsh python
 

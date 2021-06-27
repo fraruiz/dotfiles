@@ -1,3 +1,5 @@
+source "$DOTFILES_PATH/scripts/core/platform.sh"
+
 # ------------------------------------------------------------------------------
 # Theme config
 # ------------------------------------------------------------------------------
@@ -24,11 +26,18 @@ export FZF_DEFAULT_OPTS="--color=$fzf_colors --reverse"
 # ------------------------------------------------------------------------------
 # Path - The higher it is, the more priority it has
 # ------------------------------------------------------------------------------
+if platform::is_macos; then
+  if platform::is_macos_arm; then
+    export PATH="$PATH:/opt/homebrew/bin:/usr/local/bin"
+  else
+    export PATH="$PATH:/usr/local/bin"
+  fi
+fi
+
 export path=(
   "$HOME/bin"
   "$DOTFILES_PATH/bin"
   "$HOME/.cargo/bin"
-  "/opt/homebrew/bin"
   "/usr/local/bin"
   "/usr/local/sbin"
   "/bin"

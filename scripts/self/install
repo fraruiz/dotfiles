@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
-source "$DOTFILES_PATH/scripts/self/utils/platform_install.sh"
 
 export ZIM_HOME="$DOTFILES_PATH/modules/zimfw"
-
 
 ##? Install and setup dotfiles
 ##?
@@ -13,15 +11,7 @@ export ZIM_HOME="$DOTFILES_PATH/modules/zimfw"
 
 docs::parse "$@"
 
-if platform::is_macos; then
-  output::write "🍎 Setting up macOS platform"
-  
-  if ! platform::command_exists brew; then
-    output::error "brew not installed, installing"
-
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  fi
-fi
+platform::ensure_environment
 
 script::depends_on cargo
 

@@ -18,7 +18,7 @@ ensure_if_exists_file ~/.bashrc
 ln -s $DOTFILES_PATH/shell/bash/.bashrc ~/.bashrc
 
 ensure_if_exists_file ~/.bash_profile
-ln -s $DOTFILES_PATH/shell/zsh/bashrc/.bash_profile ~/.bash_profile
+ln -s $DOTFILES_PATH/shell/bash/.bash_profile ~/.bash_profile
 
 ensure_if_exists_file ~/.zlogin
 ln -s $DOTFILES_PATH/shell/zsh/.zlogin ~/.zlogin

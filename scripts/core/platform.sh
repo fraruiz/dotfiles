@@ -30,8 +30,8 @@ platform::ensure_environment(){
   fi
 
   if ! platform::command_exists cargo; then
-    echo "> Installing cargo 📦"
-    curl https://sh.rustup.rs -sSf | sh
+    echo "> Installing rust & cargo 📦"
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   fi
 
   export PATH="$HOME/.cargo/bin:$PATH"

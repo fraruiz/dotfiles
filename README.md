@@ -1,13 +1,20 @@
-# dotfiles
+# My dotfiles 
 
-## Installation
+## 🚀 Installation
 
 Using wget
 ```bash
 bash <(wget -qO- https://raw.githubusercontent.com/franciscoruizar/dotfiles/HEAD/installer)
 ```
 
-Set ZSH as default shell
+Using curl
 ```bash
-chsh -s $(which zsh)
+bash <(curl -s https://raw.githubusercontent.com/franciscoruizar/dotfiles/HEAD/installer)
 ```
+
+## Inspired on:
+- [Dotly]("https://github.com/CodelyTV/dotly")
+- [rgomezcasas]("https://github.com/rgomezcasas/dotfiles")
+
+## ⚖️ License
+The MIT License (MIT). Please see [License](LICENSE) for more information.

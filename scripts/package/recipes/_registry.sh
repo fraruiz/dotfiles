@@ -1,3 +1,12 @@
+if ! ${DOT_REGISTRY_SOURCED:-false}; then
+  for file in $DOTFILES_PATH/scripts/package/recipes/{docpars,cargo}.sh; do
+    source "$file"
+  done
+  unset file
+
+  readonly DOT_REGISTRY_SOURCED=true
+fi
+
 registry::install() {
   local -r installation_command="$1::install"
 

@@ -29,16 +29,18 @@ case $1 in
   ;;
 "test_performance")
   script::depends_on hyperfine
+  if platform::command_exists brew; then
+    hyperfine '/bin/zsh -i -c exit' '/opt/homebrew/bin/zsh -i -c exit' --warmup 1
+    echo ""
+    echo "ZSH INFO:"
 
-  hyperfine '/bin/zsh -i -c exit' '/opt/homebrew/bin/zsh -i -c exit' --warmup 1
+    echo "  🍎 macOS ZSH 📂 /bin/zsh              - $(/bin/zsh --version)"
+    echo "  🍺 Brew ZSH  📂 /opt/homebrew/bin/zsh - $(/opt/homebrew/bin/zsh --version)"
 
-  echo ""
-  echo "ZSH INFO:"
-  echo "  🍎 macOS ZSH 📂 /bin/zsh              - $(/bin/zsh --version)"
-  echo "  🍺 Brew ZSH  📂 /opt/homebrew/bin/zsh - $(/opt/homebrew/bin/zsh --version)"
+    echo ""
+    echo "✨ Currently using $(command -v zsh) ✨"
+  fi
 
-  echo ""
-  echo "✨ Currently using $(command -v zsh) ✨"
   ;;
 "clean_cache")
   find "$HOME" -name '*.zwc' -delete

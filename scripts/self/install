@@ -1,20 +1,25 @@
 #!/usr/bin/env bash
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/self/utils/environment.sh"
 
 export ZIM_HOME="$DOTFILES_PATH/modules/zimfw"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+if platform::is_macos; then
+  output::answer "🍎 Setting up macOS platform"
+  install_macos_environment
+else
+  install_linux_environment
+fi
+
+script::depends_on docpars fzf zsh python
 
 ##? Install and setup dotfiles
 ##?
 ##? Usage:
 ##?    install
-
 docs::parse "$@"
-
-output::write "Setting up environment 🛠️"
-platform::ensure_environment
-
-script::depends_on docpars fzf zsh python
 
 output::write "Setting up symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true

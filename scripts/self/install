@@ -6,11 +6,6 @@ source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 export ZIM_HOME="$DOTFILES_PATH/modules/zimfw"
 export PATH="$HOME/.cargo/bin:$PATH"
 
-if platform::is_macos; then
-  output::answer "🍎 Setting up macOS platform"
-  install_macos_custom
-fi
-
 script::depends_on docpars fzf zsh python
 
 ##? Install and setup dotfiles

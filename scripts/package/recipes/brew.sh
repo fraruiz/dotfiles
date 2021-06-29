@@ -1,8 +1,12 @@
 #!/bin/user/env bash
 
-install_macos_environment() {
+install_macos_custom() {
   if ! platform::command_exists brew; then
     output::error "brew not installed, installing"
+
+    if [ "$DOTLY_ENV" == "CI" ]; then
+      export CI=1
+    fi
 
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
@@ -29,6 +33,6 @@ install_macos_environment() {
   brew list mas || brew install mas | log::file "Installing mas"
 }
 
-install_linux_environment() {
-  echo ""
+install_linux_custom() {
+  echo
 }

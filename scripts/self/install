@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
-source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 
 export ZIM_HOME="$DOTFILES_PATH/modules/zimfw"
 export PATH="$HOME/.cargo/bin:$PATH"

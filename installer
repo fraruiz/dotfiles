@@ -66,10 +66,8 @@ _w "  ┌───────────────────────�
 _w "~ │ 🚀 Welcome to the ${green}dotfiles${normal} installer! │ ~"
 _w "  └───────────────────────────────────────┘"
 _w
-_q "Where do you want your dotfiles to be located? (default ~/.dotfiles)" "DOTFILES_PATH"
-DOTFILES_PATH="${DOTFILES_PATH:-$HOME/.dotfiles}"
-DOTFILES_PATH="$(eval echo "$DOTFILES_PATH")"
-export DOTFILES_PATH="$DOTFILES_PATH"
+_w "Your dotfiles will locate into ~/.dotfiles"
+export DOTFILES_PATH="$HOME/.dotfiles"
 
 create_dotfiles_dir "$DOTFILES_PATH"
 

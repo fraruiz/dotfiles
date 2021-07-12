@@ -1,3 +1,5 @@
+export DOTFILES_PATH="$HOME/.dotfiles"
+
 # Uncomment for debuf with `zprof`
 # zmodload zsh/zprof
 

@@ -147,5 +147,7 @@ git submodule update --init --recursive 2>&1 | _log "Installing dotfiles depende
 chmod -R 755 $DOTFILES_PATH
 "$PWD/bin/dot" self install
 
+export DOTFILES_PATH="$DOTFILES_PATH"
+
 _a "🎉 dotfiles installed correctly! 🎉"
 _a "Please, restart your terminal to see the changes"

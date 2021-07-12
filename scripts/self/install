@@ -4,7 +4,12 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 
 export ZIM_HOME="$DOTFILES_PATH/modules/zimfw"
-export PATH="$HOME/.cargo/bin:$PATH"
+
+##? Install DOTFILES and setup dotfiles
+##?
+##? Usage:
+##?    install
+docs::parse "$@"
 
 if platform::is_macos; then
   output::answer "🍎 Setting up macOS platform"
@@ -14,22 +19,14 @@ else
   install_linux_custom
 fi
 
-script::depends_on docpars fzf zsh python
+script::depends_on cargo
 
-##? Install DOTFILES and setup dotfiles
-##?
-##? Usage:
-##?    install
-docs::parse "$@"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+script::depends_on docpars fzf zsh python
 
 output::answer "Setting up symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true
-touch "$HOME/.z"
-
-if ! str::contains zsh "$SHELL"; then
-  output::answer "Setting zsh as the default shell"
-  sudo chsh -s "$(command -v zsh)" | log::file "Setting zsh as default shell"
-fi
 
 output::answer "Installing zim"
 zsh "$ZIM_HOME/zimfw.zsh" install | log::file "Installing zim"

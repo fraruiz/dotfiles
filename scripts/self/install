@@ -1,23 +1,38 @@
 #!/usr/bin/env bash
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 
 export ZIM_HOME="$DOTFILES_PATH/modules/zimfw"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+if platform::is_macos; then
+  output::answer "🍎 Setting up macOS platform"
+  install_macos_custom
+else
+  output::answer "🐧 Setting up Linux platform"
+  install_linux_custom
+fi
+
 script::depends_on docpars fzf zsh python
 
-##? Install and setup dotfiles
+##? Install DOTFILES and setup dotfiles
 ##?
 ##? Usage:
 ##?    install
 docs::parse "$@"
 
-output::write "Setting up symlinks"
+output::answer "Setting up symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true
+touch "$HOME/.z"
 
-output::write "Installing zim"
+if ! str::contains zsh "$SHELL"; then
+  output::answer "Setting zsh as the default shell"
+  sudo chsh -s "$(command -v zsh)" | log::file "Setting zsh as default shell"
+fi
+
+output::answer "Installing zim"
 zsh "$ZIM_HOME/zimfw.zsh" install | log::file "Installing zim"
 
-output::write "Installing completions"
-"$DOTFILES_PATH/bin/dot" shell zsh reload_completions | log::file "Installing completions"
+output::answer "Installing completions"
+"$DOTFILES_PATH/bin/dot" shell zsh reload_completions

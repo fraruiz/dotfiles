@@ -10,6 +10,9 @@ set -euo pipefail
 DOTFILES_REPOSITORY=${DOTFILES_REPOSITORY:-franciscoruizar/dotfiles}
 DOTFILES_BRANCH=${DOTFILES_BRANCH:-main}
 DOTFILES_LOG_FILE=${DOTFILES_LOG_FILE:-$HOME/.dotfiles.log}
+DOTFILES_PATH="$HOME/.dotfiles"
+
+export DOTFILES_PATH="$HOME/.dotfiles"
 export DOTFILES_ENV=${DOTFILES_ENV:-PROD}
 export DOTFILES_INSTALLER=true
 
@@ -51,8 +54,6 @@ create_dotfiles_dir() {
     _s "Creating a backup in '$backup_path'"
 
     mv "$1" "$backup_path"
-  else
-    _a "Ok! dotfiles will be located in: ${purple}$DOTFILES_PATH${normal}"
   fi
 
   mkdir -p "$1"
@@ -66,10 +67,7 @@ _w "  ┌───────────────────────�
 _w "~ │ 🚀 Welcome to the ${green}dotfiles${normal} installer! │ ~"
 _w "  └───────────────────────────────────────┘"
 _w
-_q "Where do you want your dotfiles to be located? (default ~/.dotfiles)" "DOTFILES_PATH"
-DOTFILES_PATH="${DOTFILES_PATH:-$HOME/.dotfiles}"
-DOTFILES_PATH="$(eval echo "$DOTFILES_PATH")"
-export DOTFILES_PATH="$DOTFILES_PATH"
+_w "Your dotfiles will be located in ~/.dotfiles"
 
 create_dotfiles_dir "$DOTFILES_PATH"
 
@@ -146,8 +144,6 @@ git submodule update --init --recursive 2>&1 | _log "Installing dotfiles depende
 
 chmod -R 755 $DOTFILES_PATH
 "$PWD/bin/dot" self install
-
-export DOTFILES_PATH="$DOTFILES_PATH"
 
 _a "🎉 dotfiles installed correctly! 🎉"
 _a "Please, restart your terminal to see the changes"

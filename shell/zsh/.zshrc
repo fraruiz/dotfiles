@@ -1,3 +1,5 @@
+DOTFILES_PATH="$HOME/.dotfiles"
+
 # ZSH Ops
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FCNTL_LOCK

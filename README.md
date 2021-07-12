@@ -12,7 +12,7 @@ Using curl
 bash <(curl -s https://raw.githubusercontent.com/franciscoruizar/dotfiles/HEAD/installer)
 ```
 
-##⚠️ Attention: 
+## ⚠️ Attention: 
 - If you have mac, you need installed [brew]("https://brew.sh/")
 
 ## 🥳 Inspired on:

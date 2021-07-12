@@ -5,14 +5,18 @@ source "$DOTFILES_PATH/symlinks/utils.sh"
 ensure_if_exists_file ~/.inputrc
 ln -s $DOTFILES_PATH/shell/.inputrc ~/.inputrc
 
-ensure_if_exists_file ~/.zimrc
-ln -s $DOTFILES_PATH/shell/zsh/.zimrc ~/.zimrc
+# Bash
 
 ensure_if_exists_file ~/.bashrc
 ln -s $DOTFILES_PATH/shell/bash/.bashrc ~/.bashrc
 
 ensure_if_exists_file ~/.bash_profile
 ln -s $DOTFILES_PATH/shell/bash/.bash_profile ~/.bash_profile
+
+# Zsh
+
+ensure_if_exists_file ~/.zimrc
+ln -s $DOTFILES_PATH/shell/zsh/.zimrc ~/.zimrc
 
 ensure_if_exists_file ~/.zlogin
 ln -s $DOTFILES_PATH/shell/zsh/.zlogin ~/.zlogin
@@ -23,6 +27,8 @@ ln -s $DOTFILES_PATH/shell/zsh/.zshenv ~/.zshenv
 ensure_if_exists_file ~/.zshrc
 ln -s $DOTFILES_PATH/shell/zsh/.zshrc ~/.zshrc
 
+# Git
+
 ensure_if_exists_file ~/.gitattributes
 ln -s $DOTFILES_PATH/git/.gitattributes ~/.gitattributes
 
@@ -31,6 +37,8 @@ ln -s $DOTFILES_PATH/git/.gitconfig ~/.gitconfig
 
 ensure_if_exists_file ~/.gitignore_global
 ln -s $DOTFILES_PATH/git/.gitignore_global ~/.gitignore_global
+
+# Vim
 
 ensure_if_exists_file ~/.vimrc
 ln -s $DOTFILES_PATH/editors/.vimrc ~/.vimrc

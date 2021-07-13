@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
-source "$DOTFILES_PATH/scripts/core/_main.sh"
+set -euo pipefail
 
+source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Install VsCode extensions
 #?? 1.0.0
 ##?

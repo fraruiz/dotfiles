@@ -9,7 +9,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?    ddd <path>
-docs::eval "$@"
+docs::parse "$@"
 
 if [ $# -ge 1 ] && [ -n "$1" ]; then
   mkdir -p "$1/application"

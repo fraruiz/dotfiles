@@ -10,6 +10,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?    org_contributors <organization>
 ##?
-docs::eval "$@"
+docs::parse "$@"
 
 python "$DOTFILES_PATH/scripts/github/utils/github-contributors.py" -t "$GITHUB_TOKEN" -o "$@"

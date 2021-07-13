@@ -11,6 +11,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?    subdomains <domain>
 ##?
-docs::eval "$@"
+docs::parse "$@"
 
 python "$DOTFILES_PATH/scripts/github/utils/github-subdomains.py" -t "$GITHUB_TOKEN" -d "$@"

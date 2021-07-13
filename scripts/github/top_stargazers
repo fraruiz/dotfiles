@@ -12,7 +12,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Example:
 ##?    top_stargazers user/repo
-docs::eval "$@"
+docs::parse "$@"
 
 log::warning "This could take a while!"
 

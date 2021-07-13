@@ -20,8 +20,8 @@ ensure_if_exists_file(){
 docs::parse "$@"
 
 if platform::is_macos; then
-    ensure_if_exists_file ~/Library/Application\ Support/Code/User/settings.json
-    ln -s $DOTFILES_PATH/editors/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+    ensure_if_exists_file /usr/local/Homebrew/.vscode/settings.json
+    ln -s $DOTFILES_PATH/editors/vscode/settings.json /usr/local/Homebrew/.vscode/settings.json
 elif platform::is_linux; then
     ensure_if_exists_file ~/.config/Code/User/settings.json
     ln -s $DOTFILES_PATH/editors/vscode/settings.json ~/.config/Code/User/settings.json

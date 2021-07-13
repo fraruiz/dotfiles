@@ -7,9 +7,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 current_timestamp() { date +%s; }
 
 create_if_not_exists_dir(){
-  if ! [ -f "$1" ]; then
-      mkdir "$1"
-  fi
+	[ ! -d "$1" ] && mkdir "$1"
 }
 
 ensure_if_exists_file(){

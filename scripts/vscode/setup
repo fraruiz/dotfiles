@@ -6,7 +6,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 current_timestamp() { date +%s; }
 
-create_if_not_exists_dir(){
+create_if_not_exists_file(){
 	[ ! -f "$1" ] && mkdir -p "$(dirname "$1")" && touch "$1"
 }
 
@@ -28,11 +28,11 @@ if platform::is_macos; then
     ensure_if_exists_file ~/Library/Application\ Support/Code/User/settings.json
     ln -s $DOTFILES_PATH/editors/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 elif platform::is_linux; then
-		create_if_not_exists_dir ~/.config/Code/User/settings.json
+		create_if_not_exists_file ~/.config/Code/User/settings.json
     ensure_if_exists_file ~/.config/Code/User/settings.json
     ln -s $DOTFILES_PATH/editors/vscode/settings.json ~/.config/Code/User/settings.json
 elif platform::is_wsl; then
-		create_if_not_exists_dir $WINHOME/AppData/Roaming/Code/User/settings.json
+		create_if_not_exists_file $WINHOME/AppData/Roaming/Code/User/settings.json
     ensure_if_exists_file $WINHOME/AppData/Roaming/Code/User/settings.json
     ln -s $DOTFILES_PATH/editors/vscode/settings.json $WINHOME/AppData/Roaming/Code/User/settings.json
 fi

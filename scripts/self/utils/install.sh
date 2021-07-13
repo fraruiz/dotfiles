@@ -34,5 +34,5 @@ install_macos_custom() {
 }
 
 install_linux_custom() {
-  echo
+  echo "✅ DOne"
 }

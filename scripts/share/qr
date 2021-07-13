@@ -14,4 +14,4 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   qr foo
 docs::parse "$@"
 
-echo "$contents" | curl -F-=\<- qrenco.de
+echo "$1" | curl -F-=\<- qrenco.de

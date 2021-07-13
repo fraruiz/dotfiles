@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? DDD
+#?? 1.0.0
+##?
+##? Usage:
+##?    ddd <path>
+
+docs::eval "$@"
+
+if [ $# -ge 1 ] && [ -n "$1" ]; then
+  mkdir -p "$1/application"
+  mkdir -p "$1/domain"
+  mkdir -p "$1/infrastructure"
+else
+  mkdir -p "$PWD/application"
+  mkdir -p "$PWD/domain"
+  mkdir -p "$PWD/infrastructure"
+fi
+
+
+
+echo "😬 Dooone!"

@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
 
-set -euo pipefail
-
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 source "$DOTFILES_PATH/symlinks/utils.sh"
 
-##? Install VsCode dotfiles
+##? Install VsCode extensions
 #?? 1.0.0
 ##?
 ##? Usage:
-##?   symlinks
+##?   setup
 docs::parse "$@"
 
 if platform::is_macos; then

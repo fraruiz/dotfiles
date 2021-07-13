@@ -8,17 +8,20 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
+##?    ddd
 ##?    ddd <path>
 docs::parse "$@"
 
+CURRENT_PATH="$PWD"
+
 if [ $# -ge 1 ] && [ -n "$1" ]; then
-  mkdir -p "$1/application"
-  mkdir -p "$1/domain"
-  mkdir -p "$1/infrastructure"
-else
-  mkdir -p "$PWD/application"
-  mkdir -p "$PWD/domain"
-  mkdir -p "$PWD/infrastructure"
+  CURRENT_PATH="$1"
+  CURRENT_PATH="$1"
+  CURRENT_PATH="$1"
 fi
+
+mkdir -p "$CURRENT_PATH/application"
+mkdir -p "$CURRENT_PATH/domain"
+mkdir -p "$CURRENT_PATH/infrastructure"
 
 echo "😬 Dooone!"

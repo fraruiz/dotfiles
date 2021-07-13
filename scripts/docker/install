@@ -19,16 +19,18 @@ if ! platform::command_exists docker; then
            echo "😬 Installed!"
        fi
    else
-       if [platform::is_macos] || [platform::is_macos_arm]; then
+       if platform::is_macos; then
            output::error "Unsupported operating system 'macOS'"
-           output::error "Please get Docker Desktop from https://www.docker.com/products/docker-desktop"
        elif platform::is_wsl; then
            output::error "We recommend using Docker Desktop for Windows."
-           output::error "Please get Docker Desktop from https://www.docker.com/products/docker-desktop"
        fi
+       output::error "Please get Docker Desktop from https://www.docker.com/products/docker-desktop"
    fi
- else
-   echo "😬 It's installed!"
 fi
+
+if platform::command_exists docker; then
+   echo "✅ installed!"
+fi
+
 
 

@@ -22,7 +22,7 @@ docs::parse "$@"
 if platform::is_macos; then
     ensure_if_exists_file ~/Library/Application\ Support/Code/User/settings.json
     ln -s $DOTFILES_PATH/editors/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-elif platform::is_macos; then
+elif platform::is_linux; then
     ensure_if_exists_file ~/.config/Code/User/settings.json
     ln -s $DOTFILES_PATH/editors/vscode/settings.json ~/.config/Code/User/settings.json
 elif platform::is_wsl; then

@@ -12,8 +12,11 @@ Using curl
 bash <(curl -s https://raw.githubusercontent.com/franciscoruizar/dotfiles/HEAD/installer)
 ```
 
-## ⚠️ Attention: 
-- If you have mac, you need installed [brew]("https://brew.sh/")
+## Switch to zsh shell
+Using curl
+```bash
+chsh -s $(which zsh)
+```
 
 ## 🥳 Inspired on:
 - [Dotly]("https://github.com/CodelyTV/dotly")

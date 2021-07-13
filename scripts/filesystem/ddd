@@ -21,6 +21,4 @@ else
   mkdir -p "$PWD/infrastructure"
 fi
 
-
-
 echo "😬 Dooone!"

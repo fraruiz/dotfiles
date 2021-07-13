@@ -6,9 +6,15 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 current_timestamp() { date +%s; }
 
+ensure_if_not_exists_dir(){
+  if ! [ -f "$1" ]; then
+      mkdir "$1"
+  fi
+}
+
 ensure_if_exists_file(){
   if [ -f $1 ]; then
-      mv $1 $1.$(current_timestamp).back
+      mv "$1 $1.$(current_timestamp).back"
   fi
 }
 
@@ -20,12 +26,15 @@ ensure_if_exists_file(){
 docs::parse "$@"
 
 if platform::is_macos; then
-    ensure_if_exists_file /usr/local/Homebrew/.vscode/settings.json
-    ln -s $DOTFILES_PATH/editors/vscode/settings.json /usr/local/Homebrew/.vscode/settings.json
+		ensure_if_not_exists_dir ~/Library/Application\ Support/Code/User
+    ensure_if_exists_file ~/Library/Application\ Support/Code/User/settings.json
+    ln -s $DOTFILES_PATH/editors/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 elif platform::is_linux; then
+		ensure_if_not_exists_dir ~/.config/Code/User
     ensure_if_exists_file ~/.config/Code/User/settings.json
     ln -s $DOTFILES_PATH/editors/vscode/settings.json ~/.config/Code/User/settings.json
 elif platform::is_wsl; then
+		ensure_if_not_exists_dir $WINHOME/AppData/Roaming/Code/User
     ensure_if_exists_file $WINHOME/AppData/Roaming/Code/User/settings.json
     ln -s $DOTFILES_PATH/editors/vscode/settings.json $WINHOME/AppData/Roaming/Code/User/settings.json
 fi

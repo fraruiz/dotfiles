@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-source "$DOTLY_PATH/scripts/core/_main.sh"
+source "$DOTFILES_PATH/scripts/core/_main.sh"
 
 ##? Add intellij Code Templates symlink (since it's not synced via JetBrains Toolbox)
 #?? 1.0.0

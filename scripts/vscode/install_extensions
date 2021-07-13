@@ -4,11 +4,11 @@ set -euo pipefail
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
-##? Generates and copy to the clipboard a UUID
+##? Install VsCode extensions
 #?? 1.0.0
 ##?
 ##? Usage:
-##?   uuid_code
+##?   install_extensions
 docs::parse "$@"
 
 # Visual Studio Code :: Package list

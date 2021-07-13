@@ -7,12 +7,12 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 current_timestamp() { date +%s; }
 
 create_if_not_exists_dir(){
-	[ ! -d "$1" ] && mkdir "$1"
+	sudo [ ! -d "$1" ] && mkdir "$1"
 }
 
 ensure_if_exists_file(){
   if [ -f "$1" ]; then
-      mv "$1" "$1.$(current_timestamp).back"
+      sudo mv "$1" "$1.$(current_timestamp).back"
   fi
 }
 

@@ -11,8 +11,8 @@ create_if_not_exists_dir(){
 }
 
 ensure_if_exists_file(){
-  if [ -f "$1" ]; then
-      sudo mv "$1" "$1.$(current_timestamp).back"
+  if [ -f $1 ]; then
+      mv $1 $1.$(current_timestamp).back
   fi
 }
 
@@ -25,7 +25,7 @@ docs::parse "$@"
 
 if platform::is_macos; then
 		create_if_not_exists_dir ~/Library/Application\ Support/Code/User
-    ensure_if_exists_file ~/Library/Application\ Support/Code/User/settings.json
+    ensure_if_exists_file "~/Library/Application\ Support/Code/User/settings.json"
     ln -s $DOTFILES_PATH/editors/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 elif platform::is_linux; then
 		create_if_not_exists_dir ~/.config/Code/User

@@ -11,7 +11,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   install
 docs::parse "$@"
 
-if ! [platform::command_exists docker]; then
+if ! platform::command_exists docker; then
    if platform::is_linux; then
        bash <(curl -s https://get.docker.com/)
 
@@ -27,8 +27,8 @@ if ! [platform::command_exists docker]; then
            output::error "Please get Docker Desktop from https://www.docker.com/products/docker-desktop"
        fi
    fi
-   else
-     echo "😬 It's installed!"
+ else
+   echo "😬 It's installed!"
 fi
 
 

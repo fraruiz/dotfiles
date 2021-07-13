@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Generates and copy to the clipboard a UUID
+#?? 1.0.0
+##?
+##? Usage:
+##?   uuid_code
+docs::parse "$@"
+
+# Visual Studio Code :: Package list
+pkglist=(
+codely.codely-theme
+msjsdiag.debugger-for-chrome
+ms-azuretools.vscode-docker
+donjayamanne.githistory
+eamodio.gitlens
+golang.go
+k--kato.intellij-idea-keybindings
+pkief.material-icon-theme
+netcorext.uuid-generator
+redhat.vscode-yaml
+ritwickdey.liveserver
+mikestead.dotenv
+orta.vscode-jest
+rvest.vs-code-prettier-eslint
+quicktype.quicktype
+)
+
+for i in ${pkglist[@]}; do
+  code --install-extension $i
+done

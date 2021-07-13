@@ -23,7 +23,7 @@ dot::list_scripts() {
 }
 
 dot::list_scripts_path() {
-  dotfiles_contexts=$(find "$DOTFILES_PATH/scripts" -type f -not -path "$DOTFILES_PATH/scripts/core/*")
+  dotfiles_contexts=$(find "$DOTFILES_PATH/scripts" -type f -not -name "*.sh")
 
   printf "%s\n%s" "$dotfiles_contexts" | sort -u
 }

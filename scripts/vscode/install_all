@@ -2,7 +2,7 @@
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
-##? Install DOTFILES and setup dotfiles
+##? Install VsCode and setup dotfiles
 ##?
 ##? Usage:
 ##?    install_all

@@ -9,7 +9,7 @@ source "$DOTFILES_PATH/symlinks/utils.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?   install
+##?   symlinks
 docs::parse "$@"
 
 if platform::is_macos; then

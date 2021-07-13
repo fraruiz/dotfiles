@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Install and setup VsCode
+#?? 1.0.0
+##?
+##? Usage:
+##?   install
+docs::parse "$@"
+
+output::answer "Installing Visual Studio Code"
+"$DOTFILES_PATH/bin/dot" vscode install
+
+output::answer "Installing extensions Visual Studio Code"
+"$DOTFILES_PATH/bin/dot" vscode extensions
+
+output::answer "Setup Visual Studio Code"
+"$DOTFILES_PATH/bin/dot" vscode setup

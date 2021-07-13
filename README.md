@@ -2,21 +2,23 @@
 
 ## 🚀 Installation
 
-Using wget
-```bash
-bash <(wget -qO- https://raw.githubusercontent.com/franciscoruizar/dotfiles/HEAD/installer)
-```
+### ⚠️ Attention: Reqirements
+- If you have macOS, install [brew]("https://brew.sh/")
 
-Using curl
-```bash
-bash <(curl -s https://raw.githubusercontent.com/franciscoruizar/dotfiles/HEAD/installer)
-```
+1. Execute installer
+    Using wget
+    ```bash
+    bash <(wget -qO- https://raw.githubusercontent.com/franciscoruizar/dotfiles/HEAD/installer)
+    ```
 
-## Switch to zsh shell
-Using curl
-```bash
-chsh -s $(which zsh)
-```
+	Using curl
+	```bash
+	bash <(curl -s https://raw.githubusercontent.com/franciscoruizar/dotfiles/HEAD/installer)
+	```
+2. Switch to zsh shell (Optional)
+    ```bash
+    chsh -s $(which zsh)
+    ```
 
 ## 🥳 Inspired on:
 - [Dotly]("https://github.com/CodelyTV/dotly")

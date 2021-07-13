@@ -9,7 +9,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?    find_broken_symlinks
-
 docs::eval "$@"
 
 find -L . -type l

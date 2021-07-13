@@ -10,7 +10,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   change_wallpaper <colorName>
 ##?   change_wallpaper <url>
-
 docs::parse "$@"
 
 WALLPAPER_DIR="$HOME/Pictures/Wallpapers"

@@ -9,7 +9,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?    ddd <path>
-
 docs::eval "$@"
 
 if [ $# -ge 1 ] && [ -n "$1" ]; then

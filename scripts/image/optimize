@@ -14,7 +14,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Options:
 ##?    -h --help   Show this screen.
 ##?    -t --thumb  Optimizes for thumbnail
-
 docs::eval "$@"
 
 original_filename=$(echo "$filename" | sed 's/\(.*\)\./\1.original./')

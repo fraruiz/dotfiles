@@ -7,14 +7,14 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 current_timestamp() { date +%s; }
 
 ensure_if_not_exists_dir(){
-  if ! [ -f "$1" ]; then
-      mkdir "$1"
+  if ! [ -f $1 ]; then
+      mkdir $1
   fi
 }
 
 ensure_if_exists_file(){
   if [ -f $1 ]; then
-      mv "$1 $1.$(current_timestamp).back"
+      mv $1 $1.$(current_timestamp).back
   fi
 }
 

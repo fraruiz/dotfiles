@@ -11,7 +11,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   install
 docs::parse "$@"
 
-if !platform::command_exists docker; then
+if ! [platform::command_exists docker]; then
    if platform::is_linux; then
        bash <(curl -s https://get.docker.com/)
 

@@ -9,10 +9,10 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   extensions
 docs::parse "$@"
 
-# Visual Studio Code :: Package list
 if platform::command_exists code; then
    pkglist=(
     codely.codely-theme
+    github.github-vscode-theme
     msjsdiag.debugger-for-chrome
     ms-azuretools.vscode-docker
     donjayamanne.githistory

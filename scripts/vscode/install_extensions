@@ -12,24 +12,32 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 # Visual Studio Code :: Package list
-pkglist=(
-codely.codely-theme
-msjsdiag.debugger-for-chrome
-ms-azuretools.vscode-docker
-donjayamanne.githistory
-eamodio.gitlens
-golang.go
-k--kato.intellij-idea-keybindings
-pkief.material-icon-theme
-netcorext.uuid-generator
-redhat.vscode-yaml
-ritwickdey.liveserver
-mikestead.dotenv
-orta.vscode-jest
-rvest.vs-code-prettier-eslint
-quicktype.quicktype
-)
+if platform::command_exists code; then
+   output::write "Installing extensions"
 
-for i in ${pkglist[@]}; do
-  code --install-extension $i
-done
+   pkglist=(
+    codely.codely-theme
+    msjsdiag.debugger-for-chrome
+    ms-azuretools.vscode-docker
+    donjayamanne.githistory
+    eamodio.gitlens
+    golang.go
+    k--kato.intellij-idea-keybindings
+    pkief.material-icon-theme
+    netcorext.uuid-generator
+    redhat.vscode-yaml
+    ritwickdey.liveserver
+    mikestead.dotenv
+    orta.vscode-jest
+    rvest.vs-code-prettier-eslint
+    quicktype.quicktype
+  )
+
+  for i in ${pkglist[@]}; do
+    code --install-extension $i
+  done
+
+  output::write "✅ Done"
+else
+  output::error "You haven't got installed code"
+fi

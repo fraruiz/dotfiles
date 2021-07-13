@@ -8,6 +8,7 @@ install_macos_custom() {
   brew install findutils | log::file "Installing brew findutils"
   brew install bat | log::file "Installing brew bat"
   brew install hyperfine | log::file "Installing brew hyperfine"
+  brew install gnupg | log::file "Installing brew gnupg"
 
   output::answer "Installing mas"
   brew install mas | log::file "Installing mas"

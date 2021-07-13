@@ -12,7 +12,10 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 if ! platform::command_exists code; then
-    if platform::command_exists apt; then
+    if platform::command_exists brew; then
+      output::answer "Installing VsCode using brew"
+      yes | brew install --cask visual-studio-code
+    elif platform::command_exists apt; then
       output::answer "Installing VsCode using apt"
       curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
       sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
@@ -31,9 +34,6 @@ if ! platform::command_exists code; then
       sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
       yum check-update
       sudo yum install code
-    elif platform::command_exists brew; then
-      output::answer "Installing VsCode using brew"
-      yes | brew install --cask visual-studio-code
     elif platform::command_exists pacman; then
       output::answer "Installing VsCode using pacman"
       sudo yaourt -S visual-studio-code

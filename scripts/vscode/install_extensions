@@ -13,8 +13,6 @@ docs::parse "$@"
 
 # Visual Studio Code :: Package list
 if platform::command_exists code; then
-   output::write "Installing extensions"
-
    pkglist=(
     codely.codely-theme
     msjsdiag.debugger-for-chrome

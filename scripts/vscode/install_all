@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
-source "$DOTFILES_PATH/symlinks/utils.sh"
 
 ##? Install DOTFILES and setup dotfiles
 ##?
@@ -11,15 +10,7 @@ docs::parse "$@"
 
 "$DOTFILES_PATH/bin/dot" vscode install
 "$DOTFILES_PATH/bin/dot" vscode install_extensions
+"$DOTFILES_PATH/bin/dot" vscode symlinks
 
-if platform::is_macos; then
-  ensure_if_exists_file ~/Library/Application\ Support/Code/User/settings.json
-  ln -s $DOTFILES_PATH/editors/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-elif platform::is_macos; then
-  ensure_if_exists_file ~/.config/Code/User/settings.json
-  ln -s $DOTFILES_PATH/editors/vscode/settings.json ~/.config/Code/User/settings.json
-elif platform::is_wsl; then
-  ensure_if_exists_file $WINHOME/AppData/Roaming/Code/User/settings.json
-  ln -s $DOTFILES_PATH/editors/vscode/settings.json $WINHOME/AppData/Roaming/Code/User/settings.json
-fi
+
 

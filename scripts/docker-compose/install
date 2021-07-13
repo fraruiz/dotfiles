@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Install Docker
+#?? 1.0.0
+##?
+##? Usage:
+##?   install
+docs::parse "$@"
+
+if ! platform::command_exists docker-compose; then
+   if platform::is_linux; then
+       output::write "🐳 Installing Docker Compose"
+
+       sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+       sudo chmod +x /usr/local/bin/docker-compose
+
+
+       if platform::command_exists docker-compose; then
+           output::write "✅ done Docker Compose installed!"
+       fi
+   else
+       if platform::is_macos; then
+           output::error "Docker Desktop for Mac includes Compose along with other Docker apps, so Mac users do not need to install Compose separately. For installation instructions, see Install Docker Desktop on Mac."
+       elif platform::is_wsl; then
+           output::error "Docker Desktop for Windows includes Compose along with other Docker apps, so most Windows users do not need to install Compose separately. For install instructions, see Install Docker Desktop on Windows."
+       fi
+   fi
+fi
+
+

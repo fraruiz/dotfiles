@@ -13,10 +13,16 @@ docs::parse "$@"
 
 if ! platform::command_exists docker; then
    if platform::is_linux; then
+       output::write "🐳 Installing Docker"
+
        bash <(curl -s https://get.docker.com/)
 
        if platform::command_exists docker; then
-           echo "😬 Installed!"
+           output::write "✅ done Docker installed!"
+
+           output::write "🙅 Creating docker user"
+           sudo groupadd docker
+           sudo usermod -aG docker $USER
        fi
    else
        if platform::is_macos; then
@@ -27,10 +33,5 @@ if ! platform::command_exists docker; then
        output::error "Please get Docker Desktop from https://www.docker.com/products/docker-desktop"
    fi
 fi
-
-if platform::command_exists docker; then
-   echo "✅ installed!"
-fi
-
 
 

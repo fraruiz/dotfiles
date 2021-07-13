@@ -2,15 +2,16 @@
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
-##? Install VsCode and setup dotfiles
+##? Install VsCode, extensions and setup settings
+#?? 1.0.0
 ##?
 ##? Usage:
-##?    install_all
+##?   install_all
 docs::parse "$@"
 
 "$DOTFILES_PATH/bin/dot" vscode install
-"$DOTFILES_PATH/bin/dot" vscode install_extensions
-"$DOTFILES_PATH/bin/dot" vscode symlinks
+"$DOTFILES_PATH/bin/dot" vscode extensions
+"$DOTFILES_PATH/bin/dot" vscode setup
 
 
 

@@ -46,7 +46,6 @@ else
 
   script_path=""
   script_exist "$DOTFILES_PATH" "$context" "$script" && script_path="$DOTFILES_PATH"
-  script_exist "$DOTFILES_PATH" "$context" "$script" && script_path="$DOTFILES_PATH"
 
   if [ -z "$script_path" ]; then
     output::error "The script <$context / $script> doesn't exist"

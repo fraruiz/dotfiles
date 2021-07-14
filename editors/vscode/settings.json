@@ -45,5 +45,8 @@
   "[yaml]": {},
   "window.zoomLevel": 1,
   "security.workspace.trust.untrustedFiles": "open",
-  "editor.minimap.enabled": false
+  "editor.minimap.enabled": false,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  }
 }

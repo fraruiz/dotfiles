@@ -4,7 +4,7 @@ set -euo pipefail
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
-##? Install Docker
+##? Install Docker Compose
 #?? 1.0.0
 ##?
 ##? Usage:

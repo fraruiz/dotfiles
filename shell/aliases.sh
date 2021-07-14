@@ -22,6 +22,12 @@ alias gpl="git pull --rebase --autostash"
 alias gb="git branch"
 alias gl='$DOTFILES_PATH/bin/dot git pretty-log'
 
+#Docker
+alias dconn='$DOTFILES_PATH/bin/dot docker connect'
+alias dps='$DOTFILES_PATH/bin/dot docker list_containers'
+alias dprune='$DOTFILES_PATH/bin/dot docker prune'
+alias dcup='$DOTFILES_PATH/bin/dot docker-compose up'
+
 # Utils
 alias k='kill -9'
 alias i.='(idea $PWD &>/dev/null &)'

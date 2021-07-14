@@ -37,30 +37,3 @@ jobs:
           echo "DOTFILES_BRANCH: $DOTFILES_BRANCH"
           echo "DOTFILES_ENV: $DOTFILES_ENV"
           cat "$HOME/.dotfiles.log"
-  static-analysis:
-    runs-on: ubuntu-latest
-    name: 💿 Static analysis
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Set needed environment variables
-        run: |
-          echo "DOTFILES_PATH=$PWD" >> $GITHUB_ENV
-      - name: 💿 Static analysis
-        run: bash scripts/self/static_analysis
-
-  lint:
-    runs-on: ubuntu-latest
-    name: 💅 Lint
-    steps:
-      - uses: actions/checkout@v2
-
-      - name: Set needed environment variables
-        run: |
-          echo "DOTFILES_PATH=$PWD" >> $GITHUB_ENV
-          echo "PATH=$PATH:$HOME/go/bin" >> $GITHUB_ENV
-      - name: 📥 Install shfmt
-        run: go get mvdan.cc/sh/v3/cmd/shfmt
-
-      - name: 💅 Lint bash files
-        run: bash scripts/self/lint

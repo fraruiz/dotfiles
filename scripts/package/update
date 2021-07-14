@@ -13,7 +13,7 @@ source "$DOTFILES_PATH/scripts/package/package_managers/mas.sh"
 source "$DOTFILES_PATH/scripts/package/package_managers/npm.sh"
 source "$DOTFILES_PATH/scripts/package/package_managers/pacman.sh"
 source "$DOTFILES_PATH/scripts/package/package_managers/pip.sh"
-source "$DOTFILES_PATH/scripts/package/package_managers/yim.sh"
+source "$DOTFILES_PATH/scripts/package/package_managers/yum.sh"
 
 ##? Update all packages
 ##?

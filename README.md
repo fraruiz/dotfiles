@@ -2,7 +2,7 @@
 
 ## 🚀 Installation
 
-### ⚠️ Attention: Reqirements
+### ⚠️ Attention: Requirements
 
 - If you have macOS, install [brew]("https://brew.sh/")
 
@@ -22,8 +22,8 @@
 
 ## 🥳 Inspired on:
 
-- [Dotly]("https://github.com/CodelyTV/dotly")
-- [rgomezcasas]("https://github.com/rgomezcasas/dotfiles")
+- [Dotly](https://github.com/CodelyTV/dotly)
+- [rgomezcasas](https://github.com/rgomezcasas/dotfiles)
 
 ## ⚖️ License
 

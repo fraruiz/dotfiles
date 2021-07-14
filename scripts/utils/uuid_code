@@ -14,9 +14,8 @@ docs::parse "$@"
 uuid=$(uuidgen | tr '[:upper:]' '[:lower:]')
 if platform::command_exists pbcopy; then
     echo -n $uuid | pbcopy
+    osascript -e 'display notification "'"$uuid"'" with title "UUID copied to the clipboard"'
 elif platform::command_exists xclip; then
     echo -n $uuid | xclip -selection clipboard
 fi
 echo $uuid
-
-osascript -e 'display notification "'"$uuid"'" with title "UUID copied to the clipboard"'

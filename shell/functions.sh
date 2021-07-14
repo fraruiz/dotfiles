@@ -2,7 +2,7 @@ function cdd() {
   cd "$(ls -d -- */ | fzf)" || echo "Invalid directory"
 }
 
-function j() {
+function z() {
   fname=$(declare -f -F _z)
 
   [ -n "$fname" ] || source "$DOTFILES_PATH/modules/z/z.sh"

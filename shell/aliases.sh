@@ -10,23 +10,23 @@ alias dotfiles='cd $DOTFILES_PATH'
 
 # Git
 alias gaa="git add -A"
-alias gc='$DOTFILES_PATH/bin/dot git commit'
+alias gc='dot git commit'
 alias gca="git add --all && git commit --amend --no-edit"
 alias gco="git checkout"
-alias gd='$DOTFILES_PATH/bin/dot git pretty-diff'
+alias gd='dot git pretty-diff'
 alias gs="git status -sb"
 alias gf="git fetch --all -p"
 alias gps="git push"
 alias gpsf="git push --force"
 alias gpl="git pull --rebase --autostash"
 alias gb="git branch"
-alias gl='$DOTFILES_PATH/bin/dot git pretty-log'
+alias gl='dot git pretty-log'
 
 #Docker
-alias dconn='$DOTFILES_PATH/bin/dot docker connect'
-alias dps='$DOTFILES_PATH/bin/dot docker list_containers'
-alias dprune='$DOTFILES_PATH/bin/dot docker prune'
-alias dcup='$DOTFILES_PATH/bin/dot docker-compose up'
+alias dconn='dot docker connect'
+alias dps='dot docker list_containers'
+alias dprune='dot docker prune'
+alias dcup='dot docker-compose up'
 
 # Utils
 alias k='kill -9'

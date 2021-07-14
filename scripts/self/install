@@ -27,7 +27,6 @@ script::depends_on docpars fzf zsh python
 
 output::answer "Setting up symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true
-touch "$HOME/.z"
 
 output::answer "Installing zim"
 zsh "$ZIM_HOME/zimfw.zsh" install | log::file "Installing zim"

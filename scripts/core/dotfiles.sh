@@ -1,4 +1,4 @@
 dotfiles::list_bash_files() {
-  grep "#!/usr/bin/env bash" "$DOTLY_PATH"/{bin,dotfiles_template,scripts,shell,installer,restorer} -R | awk -F':' '{print $1}'
-  find "$DOTLY_PATH"/{bin,dotfiles_template,scripts,shell} -type f -name "*.sh"
+  grep "#!/usr/bin/env bash" "$DOTFILES_PATH"/{bin,scripts,shell,installer} -R | awk -F':' '{print $1}'
+  find "$DOTFILES_PATH"/{bin,scripts,shell} -type f -name "*.sh"
 }

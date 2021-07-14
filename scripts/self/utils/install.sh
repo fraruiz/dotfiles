@@ -15,5 +15,7 @@ install_macos_custom() {
 }
 
 install_linux_custom() {
+  output::answer "Installing needed gnu packages"
+  script::depends_on xclip
   echo "✅ Done"
 }

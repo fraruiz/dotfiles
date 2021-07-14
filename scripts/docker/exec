@@ -8,7 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?   exec <container name>
+##?   exec <container>
 docs::parse "$@"
 
 docker exec -it $1 /bin/bash

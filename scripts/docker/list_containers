@@ -11,7 +11,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   list_containers
 docs::parse "$@"
 
-containers=$(docker ps | awk '{if (NR!=1) print $1 ": " $(NF)}')
+containers=$(docker ps | awk '{if (NR!=1) print $1 ": " $(NF)}')
 
 echo "👇 Containers 👇"
 echo $containers

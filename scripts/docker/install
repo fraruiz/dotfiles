@@ -20,12 +20,6 @@ if ! platform::command_exists docker; then
 
         if platform::command_exists docker; then
             output::write "✅ Docker installed!"
-
-            output::answer "🙅 Creating docker user"
-            sudo groupadd docker
-            sudo usermod -aG docker $USER
-            newgrp docker
-            output::write "✅ Done!"
         fi
    	else
        	if platform::is_macos; then

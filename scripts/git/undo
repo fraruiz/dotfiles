@@ -8,5 +8,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?    undo
+docs::parse "$@"
 
 git reset HEAD~1 --mixed

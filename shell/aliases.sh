@@ -21,10 +21,12 @@ alias gpsf="git push --force"
 alias gpl="git pull --rebase --autostash"
 alias gb="git branch"
 alias gl='dot git pretty-log'
+alias gamend='dot git amend'
 
 #Docker
 alias dconn='dot docker connect'
 alias dps='dot docker list_containers'
+alias dexec='dot docker exec'
 alias dprune='dot docker prune'
 alias dcup='dot docker-compose up'
 

@@ -37,8 +37,3 @@ ln -s $DOTFILES_PATH/git/.gitconfig ~/.gitconfig
 
 ensure_if_exists_file ~/.gitignore_global
 ln -s $DOTFILES_PATH/git/.gitignore_global ~/.gitignore_global
-
-# Vim
-
-ensure_if_exists_file ~/.vimrc
-ln -s $DOTFILES_PATH/editors/.vimrc ~/.vimrc

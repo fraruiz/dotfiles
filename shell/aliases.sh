@@ -20,8 +20,11 @@ alias gps="git push"
 alias gpsf="git push --force"
 alias gpl="git pull --rebase --autostash"
 alias gb="git branch"
+alias gr='git restore .'
 alias gl='dot git pretty-log'
 alias ga='dot git amend'
+alias gundo='dot git undo'
+alias gdiscard='dot git discard'
 
 #Docker
 alias dconn='dot docker connect'

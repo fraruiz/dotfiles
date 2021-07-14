@@ -1,0 +1,57 @@
+#!/usr/bin/env bash
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Install IntellijIDEA settings
+##?
+##? Usage:
+##?   idea all
+##?   idea templates
+##?   idea styles
+##?   idea options
+docs::parse "$@"
+
+if platform::is_wsl; then
+  exit 1;
+fi
+
+preferences_dir=""
+if platform::is_macos; then
+	preferences_dir="$HOME/Library/Application Support/JetBrains"
+else
+	preferences_dir="$HOME/.config/JetBrains"
+fi
+
+intellij_version=$(ls "$preferences_dir" | grep 'IntelliJIdea\|IdeaIC' | sort -r | head -n 1)
+
+case $1 in
+"all")
+	"$DOTFILES_PATH/bin/dot" editors idea templates
+    "$DOTFILES_PATH/bin/dot" editors idea styles
+	"$DOTFILES_PATH/bin/dot" editors idea options
+  ;;
+"templates")
+	output::answer "Setup File Templates of IntellijIDEA"
+	intellij_file_templates_folder="$preferences_dir/$intellij_version/fileTemplates"
+	rm -rf "$intellij_file_templates_folder"
+	ln -s -i "$DOTFILES_PATH/editors/idea/templates/" "$intellij_file_templates_folder"
+	output::write "✅ Done"
+  ;;
+"styles")
+	output::answer "Setup File Styles of IntellijIDEA"
+	intellij_code_styles_folder="$preferences_dir/$intellij_version/codestyles"
+	rm -rf "$intellij_code_styles_folder"
+	ln -s -i "$DOTFILES_PATH/editors/idea/styles/" "$intellij_code_styles_folder"
+	output::write "✅ Done"
+  ;;
+"options")
+	output::answer "Setup File Options of IntellijIDEA"
+	intellij_options_folder="$preferences_dir/$intellij_version/options"
+	rm -rf "$intellij_options_folder"
+	ln -s -i "$DOTFILES_PATH/editors/idea/options/" "$intellij_options_folder"
+	output::write "✅ Done"
+  ;;
+*)
+  exit 1
+  ;;
+esac

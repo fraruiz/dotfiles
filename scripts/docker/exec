@@ -11,4 +11,4 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   exec <container name>
 docs::parse "$@"
 
-docker exec -it <container name> /bin/bash
+docker exec -it $1 /bin/bash

@@ -25,6 +25,7 @@ alias gl='dot git pretty-log'
 #Docker
 alias dconn='dot docker connect'
 alias dps='dot docker list_containers'
+alias dcup='dot docker exec'
 alias dprune='dot docker prune'
 alias dcup='dot docker-compose up'
 

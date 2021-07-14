@@ -9,7 +9,6 @@
   "files.associations": {
     "Dockerfile-*": "dockerfile"
   },
-  "editor.minimap.enabled": false,
   "editor.formatOnSave": true,
   "editor.fontFamily": "Dank Mono, Menlo, Monaco, 'Courier New', monospace",
   "workbench.editor.untitled.hint": "hidden",
@@ -46,5 +45,5 @@
   "[yaml]": {},
   "window.zoomLevel": 1,
   "security.workspace.trust.untrustedFiles": "open",
-  "workbench.activityBar.visible": false
+  "editor.minimap.enabled": false
 }

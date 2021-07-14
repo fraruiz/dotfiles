@@ -22,7 +22,7 @@ else
   preferences_dir="$HOME/.config/JetBrains"
 fi
 
-intellij_version=$(ls "$preferences_dir" | grep 'IntelliJIdea' | sort -r | head -n 1)
+intellij_version=$(ls "$preferences_dir" | grep 'IntelliJIdea\|IdeaIC' | sort -r | head -n 1)
 
 intellij_file_templates_folder="$preferences_dir/$intellij_version/fileTemplates"
 rm -rf "$intellij_file_templates_folder"

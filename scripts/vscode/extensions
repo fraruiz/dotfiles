@@ -12,6 +12,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 if platform::command_exists code; then
+  output::answer "🔨 Installing Visual Studio Code extensions"
   EXTENSIONS=(
     codely.codely-theme
     github.github-vscode-theme

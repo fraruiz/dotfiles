@@ -18,5 +18,4 @@
 -XX:HeapDumpPath=$USER_HOME/java_error_in_idea.hprof
 -Dide.no.platform.update=true
 
-# By Rafa
 -Deditor.distraction.free.mode=true

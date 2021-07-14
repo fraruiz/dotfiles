@@ -13,14 +13,13 @@ docs::parse "$@"
 
 if ! platform::command_exists docker-compose; then
    if platform::is_linux; then
-       output::write "🐳 Installing Docker Compose"
+       output::answer "🐳 Installing Docker Compose"
 
        sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
        sudo chmod +x /usr/local/bin/docker-compose
 
-
        if platform::command_exists docker-compose; then
-           output::write "✅ done Docker Compose installed!"
+           output::write "✅ Done!"
        fi
    else
        if platform::is_macos; then

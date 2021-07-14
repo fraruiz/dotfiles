@@ -40,5 +40,5 @@ if ! platform::command_exists code; then
     fi
 fi
 if platform::command_exists code; then
-    echo "✅ installed!"
+    echo "✅ Done!"
 fi

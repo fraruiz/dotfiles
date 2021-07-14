@@ -11,4 +11,4 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   private_ip
 docs::parse "$@"
 
-curl –s https://icanhazip.com
+curl https://icanhazip.com

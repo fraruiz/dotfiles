@@ -1,0 +1,28 @@
+<application>
+  <component name="NotRoamableUiSettings">
+    <option name="fontScale" value="1.0" />
+    <option name="fontSize" value="16" />
+  </component>
+  <component name="ProjectPluginTrackerManager">
+    <trackers>
+      <map>
+        <entry key="Default (Template) Project">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+      </map>
+    </trackers>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="FileTemplates.CurrentTab" value="Other" />
+    <property name="MarketplacePluginsSearchHistory" value="codely&#10;codel" />
+    <property name="SettingsSearchHistory" value="file te" />
+    <property name="fileTypeChangedCounter" value="1" />
+    <property name="fileTypeDetectors" value="com.android.tools.idea.fileTypes.profiler.MemoryCaptureFileType$Detector:com.android.tools.idea.sqlite.fileType.SqliteFileTypeDetector:com.intellij.ide.scratch.ScratchFileServiceImpl$Detector" />
+    <property name="tasks.pass.word.conversion.enforced" value="true" />
+  </component>
+  <component name="ToolbarSettingsService">
+    <option name="NEW_TOOLBAR_SETTINGS" value="OLD_NAVBAR" />
+  </component>
+</application>

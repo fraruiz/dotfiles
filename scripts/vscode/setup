@@ -23,6 +23,7 @@ ensure_if_exists_file(){
 ##?   setup
 docs::parse "$@"
 
+output::answer "⚙️ Setup Visual Studio Code settings"
 if platform::is_macos; then
 		create_if_not_exists_file ~/Library/Application\ Support/Code/User/settings.json
     ensure_if_exists_file ~/Library/Application\ Support/Code/User/settings.json
@@ -36,3 +37,4 @@ elif platform::is_wsl; then
     ensure_if_exists_file $WINHOME/AppData/Roaming/Code/User/settings.json
     ln -s $DOTFILES_PATH/editors/vscode/settings.json $WINHOME/AppData/Roaming/Code/User/settings.json
 fi
+output::write "✅ Done"

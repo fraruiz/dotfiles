@@ -71,6 +71,7 @@ case $1 in
             rvest.vs-code-prettier-eslint
             quicktype.quicktype
             ms-python.python
+            shd101wyy.markdown-preview-enhanced
         )
 
         for i in ${EXTENSIONS[@]}; do

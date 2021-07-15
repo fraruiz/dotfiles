@@ -16,6 +16,10 @@ WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
 WALLPAPER_FILENAME="$1"
 WALLPAPER_FILE_PATH="$WALLPAPER_DIR/$WALLPAPER_FILENAME"
 
+if ! [ -d "$WALLPAPER_DIR" ]; then
+  mkdir "$WALLPAPER_DIR"
+fi
+
 VALID_URL_REGEX='(https?|ftp|file)://[-A-Za-z0-9\+&@#/%?=~_|!:,.;]*[-A-Za-z0-9\+&@#/%=~_|]'
 
 if [[ $WALLPAPER_FILENAME =~ $VALID_URL_REGEX ]]; then
@@ -25,6 +29,9 @@ if [[ $WALLPAPER_FILENAME =~ $VALID_URL_REGEX ]]; then
   WALLPAPER_FILE_PATH="$WALLPAPER_DIR/$WALLPAPER_FILENAME"
 else
   if [ ! -z "$WALLPAPER_FILENAME" ]; then
+    if ! [ -d "$WALLPAPER_DIR/Colors/" ]; then
+      mkdir "$WALLPAPER_DIR/Colors"
+    fi
     WALLPAPER_FILE_PATH="$WALLPAPER_DIR/Colors/$WALLPAPER_FILENAME.jpg"
 
     if [ ! -f "$WALLPAPER_FILE_PATH" ]; then

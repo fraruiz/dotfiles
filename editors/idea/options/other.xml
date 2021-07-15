@@ -17,6 +17,7 @@
   <component name="PropertiesComponent">
     <property name="FileTemplates.CurrentTab" value="Other" />
     <property name="MarketplacePluginsSearchHistory" value="codely&#10;codel" />
+    <property name="PluginConfigurable.selectionTab" value="1" />
     <property name="SettingsSearchHistory" value="file te" />
     <property name="fileTypeChangedCounter" value="1" />
     <property name="fileTypeDetectors" value="com.android.tools.idea.fileTypes.profiler.MemoryCaptureFileType$Detector:com.android.tools.idea.sqlite.fileType.SqliteFileTypeDetector:com.intellij.ide.scratch.ScratchFileServiceImpl$Detector" />

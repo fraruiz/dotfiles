@@ -13,6 +13,10 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   --choose  Use choose instead fzf
 docs::parse "$@"
 
+if ! [ -d "$HOME/Develop/" ]; then
+  mkdir "$HOME/Develop/"
+fi
+
 project_root_directories=(
   "$HOME/Develop/"*
   "$HOME/go/src/"*

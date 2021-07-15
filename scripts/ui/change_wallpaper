@@ -41,4 +41,6 @@ fi
 
 echo "$WALLPAPER_FILE_PATH"
 
-osascript -e 'tell application "System Events" to tell every desktop to set picture to "'$WALLPAPER_FILE_PATH'"'
+if platform::command_exists osascript; then
+  osascript -e 'tell application "System Events" to tell every desktop to set picture to "'$WALLPAPER_FILE_PATH'"'
+fi

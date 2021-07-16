@@ -13,7 +13,11 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 
 if getopts "p" arg; then
-  hostname -I | cut -d' ' -f1
+  if platform::is_macos; then
+    ipconfig getifaddr en0
+  else
+    hostname -I | cut -d' ' -f1
+  fi
 else
   dig +short myip.opendns.com @resolver1.opendns.com
 fi

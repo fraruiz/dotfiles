@@ -8,7 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?   uuid_code
+##?   uuid
 docs::parse "$@"
 
 uuid=$(uuidgen | tr '[:upper:]' '[:lower:]')
@@ -17,4 +17,5 @@ echo -n $uuid | pbcopy
 if platform::command_exists osascript; then
     osascript -e 'display notification "'"$uuid"'" with title "UUID copied to the clipboard"'
 fi
+
 echo $uuid

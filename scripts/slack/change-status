@@ -8,7 +8,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? To create the token you need to create an Slack App, set the permissions for your users and install-on-team
 ##?
 ##? Usage:
-##?    change_status <text> <emoji>
+##?    change-status <text> <emoji>
 docs::parse "$@"
 
 change_status() {

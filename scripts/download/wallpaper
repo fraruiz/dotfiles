@@ -4,12 +4,12 @@ set -euo pipefail
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
-##? Change the wallpaper
+##? Download the wallpaper
 #?? 1.0.0
 ##?
 ##? Usage:
-##?   change_wallpaper <colorName>
-##?   change_wallpaper <url>
+##?   wallpaper <colorName>
+##?   wallpaper <url>
 docs::parse "$@"
 
 WALLPAPER_DIR="$HOME/Pictures/Wallpapers"

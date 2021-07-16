@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Kill process named (Default) or port
+#?? 1.0.0
+##?
+##? Usage:
+##?   kill <to_kill>
+##?   kill <port> -p
+docs::parse "$@"
+
+if getopts "p:" arg; then
+  kill $(lsof -t -i:$1)
+else
+  ps aux | grep $1 | grep -v grep | grep -v kill_named | awk '{print $2}' | xargs kill -9
+fi
+
+echo 'done!'

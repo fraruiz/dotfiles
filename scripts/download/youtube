@@ -7,9 +7,9 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?   youtube <url>
-##?   youtube <url> -mp3
+##?   youtube mp3 <url>
 
-if getopts "mp3" arg; then
+if [ $2 == "mp3" ]; then
   youtube-dl -x --audio-format mp3 "$1"
 else
   youtube-dl --format mp4 "$1"

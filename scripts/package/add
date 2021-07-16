@@ -53,7 +53,7 @@ else
       fi
     done
   else
-    for package_manager in apt dnf yum snap pacman cargo; do
+    for package_manager in apt dnf yum pacman snap cargo; do
       package::install $package_manager "$package_name" 2>&1 | log::file "Trying to install $package_name using $package_manager"
 
       if platform::command_exists "$package_name"; then

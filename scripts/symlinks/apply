@@ -13,14 +13,4 @@ docs::parse "$@"
 
 source "$DOTFILES_PATH/symlinks/links.sh"
 
-if platform::is_macos; then
-  if platform::is_macos_arm; then
-    source "$DOTFILES_PATH/symlinks/links-macos-arm.sh"
-  else
-    source "$DOTFILES_PATH/symlinks/links-macos-intel.sh"
-  fi
-else
-  source "$DOTFILES_PATH/symlinks/links-linux.sh"
-fi
-
 log::success "Done!"

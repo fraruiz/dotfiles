@@ -32,6 +32,6 @@ brew::update_apps() {
       brew upgrade "$outdated_app" 2>&1 | log::file "Updating brew app: $outdated_app"
     done
   else
-    output::answer "Already up-to-date"
+    output::write "All brew packages up to date"
   fi
 }

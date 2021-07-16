@@ -20,6 +20,6 @@ pip::update_all() {
       pip install -U "$package" 2>&1 | log::file "Updating pip app: $package"
     done
   else
-    output::answer "Already up-to-date"
+    output::write "All pip packages up to date"
   fi
 }

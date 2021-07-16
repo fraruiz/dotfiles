@@ -20,6 +20,6 @@ npm::update_all() {
       npm install -g "$package" 2>&1 | log::file "Updating npm app: $package"
     done
   else
-    output::answer "Already up-to-date"
+    output::write "All npm packages up to date"
   fi
 }

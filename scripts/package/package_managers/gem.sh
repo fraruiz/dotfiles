@@ -14,6 +14,6 @@ gem::update_all() {
       gem update "$package" 2>&1 | log::file "Updating gem app: $package"
     done
   else
-    output::answer "Already up-to-date"
+    output::write "All gem packages up to date"
   fi
 }

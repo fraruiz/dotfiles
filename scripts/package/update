@@ -41,5 +41,7 @@ platform::command_exists yum && output::h2 '🐧 yum' && yum::update_all
 
 output::h2 "Zim Framework" && zsh "$DOTFILES_PATH/modules/zimfw/zimfw.zsh" upgrade 2>&1 | log::file "Updating Zim"
 
+output::write "Al Zim Framework up to date"
+
 output::empty_line
 output::solution '👌 All your packages have been successfully updated'

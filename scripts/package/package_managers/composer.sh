@@ -9,7 +9,7 @@ composer::update_all() {
       composer::update "$dependency"
     done
   else
-    output::answer "Already up-to-date"
+    output::write "All composer packages up to date"
   fi
 }
 

@@ -32,4 +32,4 @@ output::answer "Installing zim"
 zsh "$ZIM_HOME/zimfw.zsh" install | log::file "Installing zim"
 
 output::answer "Installing completions"
-"$DOTFILES_PATH/bin/dot" shell zsh reload_completions
+"$DOTFILES_PATH/bin/dot" shell zsh reload-completions

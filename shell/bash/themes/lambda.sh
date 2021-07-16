@@ -7,7 +7,7 @@ RED_COLOR="31"
 
 lambda_theme() {
   LAST_CODE="$?"
-  current_dir=$(dot core short_pwd)
+  current_dir=$(dot core short-pwd)
   STATUS_COLOR=$GREEN_COLOR
 
   if [ $LAST_CODE -ne 0 ]; then

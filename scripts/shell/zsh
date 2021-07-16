@@ -24,9 +24,9 @@ case $1 in
 
   /bin/zsh -c "source ${ZDOTDIR:-${HOME}}/.zlogin"
 
-  "$DOTFILES_PATH/bin/dot" shell zsh reload_completions
+  "$DOTFILES_PATH/bin/dot" shell zsh reload-completions
   ;;
-"test_performance")
+"test-performance")
   script::depends_on hyperfine
 
   hyperfine '/bin/zsh -i -c exit' --warmup 1
@@ -36,10 +36,10 @@ case $1 in
   echo "  💻 ZSH 📂 /bin/zsh              - $(/bin/zsh --version)"
   echo ""
   ;;
-"clean_cache")
+"clean")
   find "$HOME" -name '*.zwc' -delete
   ;;
-"reload_completions")
+"reload-completions")
   zsh -i -c "autoload -U compaudit && autoload -Uz compinit && compinit"
 
   output::empty_line

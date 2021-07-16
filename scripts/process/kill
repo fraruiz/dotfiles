@@ -12,7 +12,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   kill <port> -p
 docs::parse "$@"
 
-if getopts "p:" arg; then
+if getopts "p" arg; then
   kill $(lsof -t -i:$1)
 else
   ps aux | grep $1 | grep -v grep | grep -v kill_named | awk '{print $2}' | xargs kill -9

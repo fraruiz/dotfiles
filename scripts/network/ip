@@ -12,7 +12,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   ip -p
 docs::parse "$@"
 
-if getopts "p:" arg; then
+if getopts "p" arg; then
   hostname -I | cut -d' ' -f1
 else
   dig +short myip.opendns.com @resolver1.opendns.com

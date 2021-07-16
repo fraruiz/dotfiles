@@ -30,7 +30,7 @@ else
 fi
 
 prompt_lambda_pwd() {
-  local -r prompt_short_dir=$("$DOTFILES_PATH/bin/dot" core short_pwd)
+  local -r prompt_short_dir=$("$DOTFILES_PATH/bin/dot" core short-pwd)
   print -n "%F{$pwd_color}${prompt_short_dir}"
 }
 

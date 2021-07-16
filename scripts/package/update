@@ -10,6 +10,7 @@ source "$DOTFILES_PATH/scripts/package/package_managers/composer.sh"
 source "$DOTFILES_PATH/scripts/package/package_managers/dnf.sh"
 source "$DOTFILES_PATH/scripts/package/package_managers/gem.sh"
 source "$DOTFILES_PATH/scripts/package/package_managers/mas.sh"
+source "$DOTFILES_PATH/scripts/package/package_managers/snap.sh"
 source "$DOTFILES_PATH/scripts/package/package_managers/npm.sh"
 source "$DOTFILES_PATH/scripts/package/package_managers/pacman.sh"
 source "$DOTFILES_PATH/scripts/package/package_managers/pip.sh"
@@ -26,16 +27,16 @@ output::write "If you want to debug what's happening behind the scenes, you can 
 
 platform::command_exists apt && output::h2 '🐧 apt' && apt::update_all
 platform::command_exists brew && output::h2 '🍺 Brew' && brew::update_all
-platform::command_exists dnf && output::h2 '🐧 dnf' && dnf::update_all
-platform::command_exists yim && output::h2 '🐧 yim' && yim::update_all
-platform::command_exists snap && output::h2 '🐧 snap' && snap::update_all
-platform::command_exists pacman && output::h2 '🐧 pacman' && pacman::update_all
 platform::command_exists cargo && output::h2 '📦 cargo' && cargo install --list | grep -E '^[a-z0-9_-]+ v[0-9.]+:$' | cut -f1 -d' ' | xargs -n1 cargo install
 platform::command_exists composer && output::h2 '🐘 Composer' && composer::update_all
+platform::command_exists dnf && output::h2 '🐧 dnf' && dnf::update_all
 platform::command_exists gem && output::h2 '♦️  gem' && gem::update_all
 platform::command_exists mas && output::h2 '🍎 App Store' && mas::update_all
+platform::command_exists snap && output::h2 '🐧 snap' && snap::update_all
 platform::command_exists npm && output::h2 '🌈 npm' && npm::update_all
+platform::command_exists pacman && output::h2 '🐧 pacman' && pacman::update_all
 platform::command_exists pip3 && output::h2 '🐍 pip' && pip::update_all
+platform::command_exists yum && output::h2 '🐧 yum' && yum::update_all
 
 
 output::h2 "Zim Framework" && zsh "$DOTFILES_PATH/modules/zimfw/zimfw.zsh" upgrade 2>&1 | log::file "Updating Zim"

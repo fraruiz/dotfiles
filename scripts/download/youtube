@@ -10,7 +10,7 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   youtube mp3 <url>
 
 if [ "$1" == "mp3" ]; then
-  youtube-dl -x --audio-format mp3 "$1"
+  youtube-dl -x --audio-format mp3 "$2"
 else
   youtube-dl --format mp4 "$1"
 fi

@@ -33,3 +33,15 @@ zsh "$ZIM_HOME/zimfw.zsh" install | log::file "Installing zim"
 
 output::answer "Installing completions"
 "$DOTFILES_PATH/bin/dot" shell zsh reload-completions
+
+log::note "Setting Git config"
+output::answer "🔀 Setting Git config"
+read -p "✉️ What is you email? " git_email
+read -p "👤 And your name? " git_name
+
+git config --global user.email "$git_email"
+git config --global user.name "$git_name"
+git config --global --unset user.signingkey
+git config --global --unset commit.gpgsign
+git config --global --unset tag.gpgsign
+git config --global --unset gpg.program

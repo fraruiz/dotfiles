@@ -25,7 +25,7 @@ docs::parse "$@"
 output::h1_without_margin "♻️  Updating all the apps on your system"
 output::write "If you want to debug what's happening behind the scenes, you can execute \`dot self debug\` in parallel."
 
-platform::command_exists apt && output::h2 '🐧 apt' && apt::update_all
+platform::command_exists apt-get && output::h2 '🐧 apt' && apt::update_all
 platform::command_exists brew && output::h2 '🍺 Brew' && brew::update_all
 platform::command_exists cargo && output::h2 '📦 cargo' && cargo install --list | grep -E '^[a-z0-9_-]+ v[0-9.]+:$' | cut -f1 -d' ' | xargs -n1 cargo install
 platform::command_exists composer && output::h2 '🐘 Composer' && composer::update_all

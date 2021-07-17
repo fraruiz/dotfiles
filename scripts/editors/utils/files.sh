@@ -5,7 +5,5 @@ create_if_not_exists_file(){
 }
 
 ensure_if_exists_file(){
-  if [ -f $1 ]; then
-      mv $1 $1.$(current_timestamp).back
-  fi
+  [ -f "$1" ] && mv "$1" "$1".$(current_timestamp).back
 }

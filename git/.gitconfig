@@ -1,7 +1,3 @@
-[user]
-	name = Francisco Ruiz
-	email = franciscoruizlezcano@gmail.com
-
 [fetch]
 	prune = true
 

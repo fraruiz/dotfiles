@@ -7,7 +7,7 @@ set -euo pipefail
 ##? Usage:
 ##?    installer
 
-DOTFILES_REPOSITORY=${DOTFILES_REPOSITORY:-franciscoruizar/dotfiles}
+DOTFILES_REPOSITORY=${DOTFILES_REPOSITORY:-franciscorzl/dotfiles}
 DOTFILES_BRANCH=${DOTFILES_BRANCH:-main}
 DOTFILES_LOG_FILE=${DOTFILES_LOG_FILE:-$HOME/.dotfiles.log}
 DOTFILES_PATH="$HOME/.dotfiles"

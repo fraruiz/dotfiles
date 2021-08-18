@@ -7,6 +7,7 @@ source "$DOTFILES_PATH/scripts/editors/utils/files.sh"
 ##?
 ##? Usage:
 ##?   vscode extensions
+##?   vscode setup
 docs::parse "$@"
 
 case $1 in

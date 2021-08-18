@@ -29,9 +29,10 @@ alias gdiscard='dot git discard'
 #Docker
 alias dconn='dot docker connect'
 alias dps='dot docker list-containers'
+alias dpsa='dot docker list-containers -a'
 alias dexec='dot docker exec'
 alias dprune='dot docker prune'
-alias dcup='dot docker-compose up'
+alias dcup='docker-compose up -d'
 
 # Utils
 alias k='kill -9'

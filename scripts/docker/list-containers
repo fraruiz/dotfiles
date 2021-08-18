@@ -8,10 +8,18 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 #?? 1.0.0
 ##?
 ##? Usage:
-##?   list_containers
+##?   list-containers
+##?   list-containers -a
 docs::parse "$@"
 
-containers=$(docker ps -a | awk '{if (NR!=1) print $1 ": " $(NF)}')
+if getopts "a" arg; then
+  containers=$(docker ps -a | awk '{if (NR!=1) print $1 ": " $(NF)}')
 
-echo "👇 Containers 👇"
-echo $containers
+  echo "👇 Containers 👇"
+  echo $containers
+else
+  containers=$(docker ps | awk '{if (NR!=1) print $1 ": " $(NF)}')
+
+  echo "👇 Containers 👇"
+  echo $containers
+fi

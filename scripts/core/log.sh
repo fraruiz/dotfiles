@@ -1,4 +1,4 @@
-DOTFILES_LOG_FILE=${DOTFILES_LOG_FILE:-$HOME/.dotfiles.log}
+DOTFILES_LOG_FILE=${DOTFILES_LOG_FILE:-$HOME/dotfiles.log}
 
 echoerr() {
   echo "$@" 1>&2

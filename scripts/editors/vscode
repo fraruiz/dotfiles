@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Install Visual Studio Code and settings
+##?
+##? Usage:
+##?   vscode extensions
+docs::parse "$@"
+
+case $1 in
+"extensions")
+    if platform::command_exists code; then
+        output::answer "🔨 Installing Visual Studio Code extensions"
+        EXTENSIONS=(
+            codely.codely-theme
+            github.github-vscode-theme
+            msjsdiag.debugger-for-chrome
+            ms-azuretools.vscode-docker
+            donjayamanne.githistory
+            eamodio.gitlens
+            golang.go
+            k--kato.intellij-idea-keybindings
+            pkief.material-icon-theme
+            netcorext.uuid-generator
+            redhat.vscode-yaml
+            ritwickdey.liveserver
+            mikestead.dotenv
+            orta.vscode-jest
+            rvest.vs-code-prettier-eslint
+            quicktype.quicktype
+            ms-python.python
+            shd101wyy.markdown-preview-enhanced
+        )
+
+        for i in ${EXTENSIONS[@]}; do
+            code --install-extension $i
+        done
+
+        output::write "✅ Done"
+    else
+        output::error "You haven't got installed code"
+    fi
+  ;;
+*)
+  exit 1
+  ;;
+esac

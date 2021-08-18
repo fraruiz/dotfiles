@@ -1,0 +1,198 @@
+<application>
+  <component name="NodeJsLocalInterpreters">
+    <local-interpreter path="/usr/local/bin/node" />
+    <local-interpreter path="/usr/local/Cellar/node/16.5.0/bin/node" />
+  </component>
+  <component name="NotRoamableUiSettings">
+    <option name="fontFace" value="Apple Color Emoji" />
+    <option name="fontScale" value="1.0" />
+    <option name="fontSize" value="14" />
+  </component>
+  <component name="ProjectPluginTrackerManager">
+    <trackers>
+      <map>
+        <entry key="1rr4iiqbWc4IwRLyT4RkGVb5rhC">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1vfb54V11W7QbOeezlWMy0fBudK">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1vfkJx7xvimjePMob7AGl5H9Xnf">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1viMd0BZLtA57bY08b7MRBeBRu2">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1vjCPSqVQ6iKltdktO8JPppkvxf">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1vjDVJZT9LdDxmnHv7ZTWdBnqzp">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1vrEBzFx2ImQg91OWo5V529PhlW">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1vzRC8hNDu6y2vFXxkhTl8nnMSr">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1w03fSlmrhNzNpBf7XCp5nKppPa">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1w2EeMQA8nPzrBzt64Cd3IizJA2">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1w2FkxMSEQo6UhiUbU0kaUsPJYR">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1w2M5FjJOjIwL8pjDhScrTXwfvW">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1wAmZAGwW94ZeCRYxaYXgthiCVB">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1wBMzl2QgKyZRtBFdQBP7VskUjh">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1wDS1yQQhx5Oqw72G8OLunL1Vho">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1wEAlFEWUH0Wkndg1sWaWe6xksg">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1wH1IL6XVZDz0r24P2EGx8oSsKG">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1wY8ttdP34ZP3w5ntzTkCNuPn7f">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1waqHbjciWPmMX2SReK78idYRbr">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1wdxwStiCqWumusfQrOZ81gFOgH">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="1wfkKrR8tQxBkupaoAz5aFfXAx1">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+        <entry key="Default (Template) Project">
+          <value>
+            <ProjectPluginTracker />
+          </value>
+        </entry>
+      </map>
+    </trackers>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.6073446" />
+    <property name="CommitToolWindow.COMMIT_SPLITTER_PROPORTION" value="0.84607106" />
+    <property name="EXPORTABILITY_SORTER.file.structure.state" value="true" />
+    <property name="ExpandBeforeRunStepsPanel" value="true" />
+    <property name="FileTemplates.SelectedTemplate" value="HTML File" />
+    <property name="FindSplitterProportion" value="0.33005893" />
+    <property name="IdeaUltimate.EnableRunTargetsOnce" value="true" />
+    <property name="InstalledPluginsSearchHistory" value="Codel&#10;Code&#10;Cod&#10;Co&#10;c" />
+    <property name="JUnit.Splitter.Proportion" value="0.26734844" />
+    <property name="JUnitSupport.hidePassedTests" value="false" />
+    <property name="LayoutCode.codeCleanup" value="true" />
+    <property name="LayoutCode.optimizeImports" value="true" />
+    <property name="LayoutCode.processChangedText" value="false" />
+    <property name="LayoutCode.rearrangeEntries" value="true" />
+    <property name="Markdown Split EditorLayout" value="Preview only" />
+    <property name="MarketplacePluginsSearchHistory" value="codely&#10;codel&#10;code&#10;co&#10;intell" />
+    <property name="MemberChooser.copyJavadoc" value="true" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="NonModalCommitPromotionState" value="ACCEPTED" />
+    <property name="SettingsSearchHistory" value="styles&#10;plugins&#10;jdk&#10;license&#10;file te" />
+    <property name="TextEditorWithPreview.SplitterProportionKey" value="0.7124183" />
+    <property name="appcds.runOnSecondStart" value="IU-212.4746.92-870b3c54c5c0dbae45e96b7c847617f88e158ee4c62ed4cc56776d7c6d67ec9a" />
+    <property name="build.toolwindow.Build Output.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="build.toolwindow.Sync.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="build.toolwindow.run.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Sources" />
+    <property name="debugger.smart.chooser.counter" value="3" />
+    <property name="debugger.speed.search.tree.option.hint.counter" value="1" />
+    <property name="decompiler.legal.notice.accepted" value="true" />
+    <property name="defaultJdkConfigured" value="true" />
+    <property name="eclipse.projects.detected" value="" />
+    <property name="experimentalFeature.run.targets" value="true" />
+    <property name="file.gist.reindex.count" value="1819" />
+    <property name="fileTypeChangedCounter" value="23" />
+    <property name="fileTypeDetectors" value="com.intellij.database.vfs.DbStorageFileType$Detector:com.intellij.ide.scratch.ScratchFileServiceImpl$Detector:com.intellij.javascript.debugger.sourcemap.SourceMapFileType$MyFileTypeDetector:com.intellij.profiler.ultimate.hprof.impl.HprofFileTypeDetector:com.jetbrains.nodejs.util.NodeFileTypeDetector$JavaScriptFileTypeDetector:com.jetbrains.nodejs.util.NodeFileTypeDetector$TypeScriptFileTypeDetector:org.jetbrains.plugins.textmate.TextMateFileType$TextMateFileDetector" />
+    <property name="go.enabled.exportability.sorter" value="true" />
+    <property name="got.it.tooltip.changes.view.toolwindow" value="1" />
+    <property name="got.it.tooltip.cwm.invitation.notification" value="1" />
+    <property name="got.it.tooltip.database.schema.control.got.it" value="1" />
+    <property name="got.it.tooltip.extract.method.gotit.navigate" value="1" />
+    <property name="got.it.tooltip.reader.mode.got.it" value="1" />
+    <property name="ide.memory.adjusted" value="true" />
+    <property name="ide.updates.previous.build.number" value="IU-212.4746.92" />
+    <property name="ide.updates.whats.new.shown.for" value="212" />
+    <property name="installed.kotlin.plugin.version" value="212-1.5.10-release-IJ4746.92" />
+    <property name="jdk.selected.JAVA_MODULE" value="11" />
+    <property name="lastSeenTip" value="neue-search_everywhere_expr.html" />
+    <property name="lastTimeTipsWereShown" value="1627934563076" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Develop" />
+    <property name="log.trace.categories" value="#com.jetbrains.rdserver.requests&#10;#com.jetbrains.rd.ide.document&#10;#com.jetbrains.rdserver.document&#10;#com.jetbrains.rdserver.editors&#10;#com.jetbrains.rdserver.actions&#10;#com.jetbrains.rdserver.permissions" />
+    <property name="packagesearch.endpoint.url.fulltext" value="https://package-search.services.jetbrains.com/api/search/idea/fulltext" />
+    <property name="packagesearch.endpoint.url.suggest" value="https://package-search.services.jetbrains.com/api/search/idea/suggest" />
+    <property name="packagesearch.status.updated.ts" value="1628856969612" />
+    <property name="project.wizard.group" value="SpringInitializr" />
+    <property name="registry.to.advanced.settings.migration.build" value="IU-212.4746.92" />
+    <property name="seenTips" value="neue-AltInsertInEditor.html,neue-local_history.html,neue-GoToInspection.html,neue-CodeCompletionMiddle.html,neue-InsertLiveTemplate.html,Kotlin.html,neue-LineEndings.html,neue-DotEtcInLookups.html,neue-ImagesLookup.html,neue-search_everywhere_expr.html" />
+    <property name="selected.color.option.type" value="LINE_NONE_COVERAGE" />
+    <property name="tasks.pass.word.conversion.enforced" value="true" />
+    <property name="ts.lib.d.ts.version" value="4.3.5" />
+    <property name="vcs.history.diff.splitter.proportion" value="0.4084132" />
+    <property name="vcs.log.changes.splitter.proportion" value="0.6022965" />
+  </component>
+  <component name="TerminalCommandHistoryManager">
+    <command-history-files>
+      <command-history-file filename="your-house-history" project-path="$USER_HOME$/Develop/meli_bootcamp_w12/Desafio_testing/your-house" last-access-time="1629228678110" />
+    </command-history-files>
+  </component>
+  <component name="ToolbarSettingsService">
+    <option name="NEW_TOOLBAR_SETTINGS" value="OLD_NAVBAR" />
+  </component>
+</application>

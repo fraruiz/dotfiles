@@ -1,0 +1,285 @@
+<application>
+  <component name="KeyPromoterXStatistic">
+    <option name="statistics">
+      <Statistic Action="Commit...">
+        <Item>
+          <IdeaActionID>CheckinProject</IdeaActionID>
+          <ShortCut>'⌘K'</ShortCut>
+          <Description>Commit...</Description>
+          <Count>2</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Copy">
+        <Item>
+          <IdeaActionID>$Copy</IdeaActionID>
+          <ShortCut>'⌘C'</ShortCut>
+          <Description>Copy</Description>
+          <Count>4</Count>
+          <Hit>263</Hit>
+        </Item>
+      </Statistic>
+      <Statistic Action="Copy Value">
+        <Item>
+          <IdeaActionID>XDebugger.CopyValue</IdeaActionID>
+          <ShortCut>'⌘C'</ShortCut>
+          <Description>Copy Value</Description>
+          <Count>2</Count>
+          <Hit>16</Hit>
+        </Item>
+      </Statistic>
+      <Statistic Action="Cut">
+        <Item>
+          <IdeaActionID>$Cut</IdeaActionID>
+          <ShortCut>'⌘X' or '⇧⌦'</ShortCut>
+          <Description>Cut</Description>
+          <Count>2</Count>
+          <Hit>132</Hit>
+        </Item>
+      </Statistic>
+      <Statistic Action="Debug">
+        <Item>
+          <IdeaActionID>Debug</IdeaActionID>
+          <ShortCut>'⇧F9'</ShortCut>
+          <Description>Debug</Description>
+          <Count>10</Count>
+          <Hit>2</Hit>
+        </Item>
+      </Statistic>
+      <Statistic Action="Generate...">
+        <Item>
+          <IdeaActionID>Generate</IdeaActionID>
+          <ShortCut>'⌃N' or '⌃⏎'</ShortCut>
+          <Description>Generate...</Description>
+          <Count>1</Count>
+          <Hit>127</Hit>
+        </Item>
+      </Statistic>
+      <Statistic Action="Go to Declaration or Usages">
+        <Item>
+          <IdeaActionID>GotoDeclaration</IdeaActionID>
+          <ShortCut>'⌘B'</ShortCut>
+          <Description>Go to Declaration or Usages</Description>
+          <Count>118</Count>
+          <Hit>3</Hit>
+        </Item>
+      </Statistic>
+      <Statistic Action="Go to Type Declaration">
+        <Item>
+          <IdeaActionID>GotoTypeDeclaration</IdeaActionID>
+          <ShortCut>'⌃⇧B'</ShortCut>
+          <Description>Go to Type Declaration</Description>
+          <Count>10</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Paste">
+        <Item>
+          <IdeaActionID>$Paste</IdeaActionID>
+          <ShortCut>'⌘V'</ShortCut>
+          <Description>Paste</Description>
+          <Count>1</Count>
+          <Hit>513</Hit>
+        </Item>
+      </Statistic>
+      <Statistic Action="Project">
+        <Item>
+          <IdeaActionID>ActivateProjectToolWindow</IdeaActionID>
+          <ShortCut>'⌘1'</ShortCut>
+          <Description>Project</Description>
+          <Count>3</Count>
+          <Hit>15</Hit>
+        </Item>
+      </Statistic>
+      <Statistic Action="Push...">
+        <Item>
+          <IdeaActionID>Vcs.Push</IdeaActionID>
+          <ShortCut>'⇧⌘K'</ShortCut>
+          <Description>Push...</Description>
+          <Count>1</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Rename...">
+        <Item>
+          <IdeaActionID>RenameElement</IdeaActionID>
+          <ShortCut>'⇧F6'</ShortCut>
+          <Description>Rename...</Description>
+          <Count>2</Count>
+          <Hit>38</Hit>
+        </Item>
+      </Statistic>
+      <Statistic Action="Rerun 'AreaAverageCalculator'">
+        <Item>
+          <IdeaActionID>Rerun</IdeaActionID>
+          <ShortCut>'⌃F5'</ShortCut>
+          <Description>Rerun 'AreaAverageCalculator'</Description>
+          <Count>2</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Rerun 'Exercise1'">
+        <Item>
+          <IdeaActionID>Rerun</IdeaActionID>
+          <ShortCut>'⌃F5'</ShortCut>
+          <Description>Rerun 'Exercise1'</Description>
+          <Count>12</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Rerun 'Exercise2'">
+        <Item>
+          <IdeaActionID>Rerun</IdeaActionID>
+          <ShortCut>'⌃F5'</ShortCut>
+          <Description>Rerun 'Exercise2'</Description>
+          <Count>3</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Rerun 'Exercise3'">
+        <Item>
+          <IdeaActionID>Rerun</IdeaActionID>
+          <ShortCut>'⌃F5'</ShortCut>
+          <Description>Rerun 'Exercise3'</Description>
+          <Count>5</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Rerun 'Exercise5'">
+        <Item>
+          <IdeaActionID>Rerun</IdeaActionID>
+          <ShortCut>'⌃F5'</ShortCut>
+          <Description>Rerun 'Exercise5'</Description>
+          <Count>2</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Rerun 'RadixSort'">
+        <Item>
+          <IdeaActionID>Rerun</IdeaActionID>
+          <ShortCut>'⌃F5'</ShortCut>
+          <Description>Rerun 'RadixSort'</Description>
+          <Count>59</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Rerun 'Starter'">
+        <Item>
+          <IdeaActionID>Rerun</IdeaActionID>
+          <ShortCut>'⌃F5'</ShortCut>
+          <Description>Rerun 'Starter'</Description>
+          <Count>99</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Rerun 'StringUtils'">
+        <Item>
+          <IdeaActionID>Rerun</IdeaActionID>
+          <ShortCut>'⌃F5'</ShortCut>
+          <Description>Rerun 'StringUtils'</Description>
+          <Count>6</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Rerun 'TimeStarter'">
+        <Item>
+          <IdeaActionID>Rerun</IdeaActionID>
+          <ShortCut>'⌃F5'</ShortCut>
+          <Description>Rerun 'TimeStarter'</Description>
+          <Count>9</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Resume Program">
+        <Item>
+          <IdeaActionID>Resume</IdeaActionID>
+          <ShortCut>'F9'</ShortCut>
+          <Description>Resume Program</Description>
+          <Count>146</Count>
+          <Hit>66</Hit>
+        </Item>
+      </Statistic>
+      <Statistic Action="Run">
+        <Item>
+          <IdeaActionID>Run</IdeaActionID>
+          <ShortCut>'⇧F10'</ShortCut>
+          <Description>Run</Description>
+          <Count>16</Count>
+          <Hit>2</Hit>
+        </Item>
+      </Statistic>
+      <Statistic Action="Show Context Actions">
+        <Item>
+          <IdeaActionID>ShowIntentionActions</IdeaActionID>
+          <ShortCut>'⌥⏎'</ShortCut>
+          <Description>Show Context Actions</Description>
+          <Count>1</Count>
+          <Hit>67</Hit>
+        </Item>
+      </Statistic>
+      <Statistic Action="Step Into">
+        <Item>
+          <IdeaActionID>StepInto</IdeaActionID>
+          <ShortCut>'F7'</ShortCut>
+          <Description>Step Into</Description>
+          <Count>107</Count>
+          <Hit>14</Hit>
+        </Item>
+      </Statistic>
+      <Statistic Action="Step Over">
+        <Item>
+          <IdeaActionID>StepOver</IdeaActionID>
+          <ShortCut>'F8'</ShortCut>
+          <Description>Step Over</Description>
+          <Count>1051</Count>
+          <Hit>758</Hit>
+        </Item>
+      </Statistic>
+      <Statistic Action="Stop 'Exercise1'">
+        <Item>
+          <IdeaActionID>Stop</IdeaActionID>
+          <ShortCut>'⌘F2'</ShortCut>
+          <Description>Stop 'Exercise1'</Description>
+          <Count>1</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Stop 'Exercise5'">
+        <Item>
+          <IdeaActionID>Stop</IdeaActionID>
+          <ShortCut>'⌘F2'</ShortCut>
+          <Description>Stop 'Exercise5'</Description>
+          <Count>3</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Stop 'RadixSort'">
+        <Item>
+          <IdeaActionID>Stop</IdeaActionID>
+          <ShortCut>'⌘F2'</ShortCut>
+          <Description>Stop 'RadixSort'</Description>
+          <Count>45</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Stop 'Starter'">
+        <Item>
+          <IdeaActionID>Stop</IdeaActionID>
+          <ShortCut>'⌘F2'</ShortCut>
+          <Description>Stop 'Starter'</Description>
+          <Count>33</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Stop 'TimeStarter'">
+        <Item>
+          <IdeaActionID>Stop</IdeaActionID>
+          <ShortCut>'⌘F2'</ShortCut>
+          <Description>Stop 'TimeStarter'</Description>
+          <Count>5</Count>
+        </Item>
+      </Statistic>
+      <Statistic Action="Terminal">
+        <Item>
+          <IdeaActionID>ActivateTerminalToolWindow</IdeaActionID>
+          <ShortCut>'⌥F12'</ShortCut>
+          <Description>Terminal</Description>
+          <Count>14</Count>
+          <Hit>6</Hit>
+        </Item>
+      </Statistic>
+      <Statistic Action="Toggle Line Breakpoint">
+        <Item>
+          <IdeaActionID>ToggleLineBreakpoint</IdeaActionID>
+          <ShortCut>'⌘F8'</ShortCut>
+          <Description>Toggle Line Breakpoint</Description>
+          <Count>58</Count>
+        </Item>
+      </Statistic>
+    </option>
+  </component>
+</application>

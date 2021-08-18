@@ -1,0 +1,42 @@
+<code_scheme name="Default" version="173">
+  <HTMLCodeStyleSettings>
+    <option name="HTML_UNIFORM_INDENT" value="true" />
+    <option name="HTML_ALIGN_TEXT" value="true" />
+  </HTMLCodeStyleSettings>
+  <JavaCodeStyleSettings>
+    <option name="TEST_NAME_SUFFIX" value="Should" />
+  </JavaCodeStyleSettings>
+  <Properties>
+    <option name="SPACES_AROUND_KEY_VALUE_DELIMITER" value="true" />
+    <option name="KEEP_BLANK_LINES" value="true" />
+  </Properties>
+  <SqlCodeStyleSettings version="5">
+    <option name="DISABLE_FORMATTING" value="true" />
+  </SqlCodeStyleSettings>
+  <codeStyleSettings language="HTML">
+    <indentOptions>
+      <option name="USE_TAB_CHARACTER" value="true" />
+      <option name="SMART_TABS" value="true" />
+    </indentOptions>
+  </codeStyleSettings>
+  <codeStyleSettings language="JAVA">
+    <option name="ALIGN_MULTILINE_FOR" value="false" />
+    <option name="ALIGN_MULTILINE_TERNARY_OPERATION" value="true" />
+    <option name="ALIGN_GROUP_FIELD_DECLARATIONS" value="true" />
+    <option name="ALIGN_CONSECUTIVE_VARIABLE_DECLARATIONS" value="true" />
+    <option name="ALIGN_CONSECUTIVE_ASSIGNMENTS" value="true" />
+    <option name="ALIGN_SUBSEQUENT_SIMPLE_METHODS" value="true" />
+    <option name="SPACE_WITHIN_ARRAY_INITIALIZER_BRACES" value="true" />
+    <option name="METHOD_PARAMETERS_WRAP" value="1" />
+    <option name="METHOD_PARAMETERS_LPAREN_ON_NEXT_LINE" value="true" />
+    <option name="METHOD_PARAMETERS_RPAREN_ON_NEXT_LINE" value="true" />
+    <option name="TERNARY_OPERATION_SIGNS_ON_NEXT_LINE" value="true" />
+    <indentOptions>
+      <option name="USE_TAB_CHARACTER" value="true" />
+      <option name="SMART_TABS" value="true" />
+    </indentOptions>
+  </codeStyleSettings>
+  <codeStyleSettings language="Properties">
+    <option name="ALIGN_GROUP_FIELD_DECLARATIONS" value="true" />
+  </codeStyleSettings>
+</code_scheme>

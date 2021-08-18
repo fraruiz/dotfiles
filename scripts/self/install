@@ -35,4 +35,6 @@ output::answer "Installing completions"
 "$DOTFILES_PATH/bin/dot" shell zsh reload-completions
 
 output::answer "Setting up workspace"
-mkdir "$HOME/Develop"
+if [ ! -d "$HOME/Develop" ]; then
+    mkdir "$HOME/Develop" | log::file "Setting up workspace"
+fi

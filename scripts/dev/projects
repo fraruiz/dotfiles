@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? List all projects
+#?? 1.0.0
+##?
+##? Usage:
+##?   projects
+##?
+docs::parse "$@"
+
+projects_root_directory="$HOME/Develop/"
+
+project_directories=$(printf '%s\n' "${projects_root_directory}" | xargs ls)
+project_directory=$(echo "$project_directories" | fzf)
+
+cd "$HOME/Develop/$project_directory"

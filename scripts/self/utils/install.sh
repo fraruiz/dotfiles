@@ -4,10 +4,9 @@ install_macos_custom() {
   output::answer "Installing needed gnu packages"
 
   for package in coreutils make gnu-sed findutils bat hyperfine mas; do
-    if ! brew list $1 &>/dev/null; then
+    if ! brew list $package &>/dev/null; then
       output::answer "Installing $package"
-      log::file "Installing brew $package"
-      brew install $1
+      brew install $package | log::file "Installing brew $package"
     fi
     output::write "✅ $package installed"
   done

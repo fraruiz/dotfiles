@@ -7,7 +7,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Usage:
 ##?   zsh optimize
 ##?   zsh test-performance
-##?   zsh reload-completions
 ##?   zsh clean
 docs::parse "$@"
 
@@ -19,8 +18,6 @@ case $1 in
 
   find "$DOTFILES_PATH/shell/zsh" -name '*.zwc' -exec rm -rf {} \;
   find "$DOTFILES_PATH/shell/zsh" -name '*.old' -exec rm -rf {} \;
-  find "$DOTFILES_PATH/modules/zimfw" -name '*.zwc' -exec rm -rf {} \;
-  find "$DOTFILES_PATH/modules/zimfw" -name '*.old' -exec rm -rf {} \;
 
   /bin/zsh -c "source ${ZDOTDIR:-${HOME}}/.zlogin"
 
@@ -38,12 +35,6 @@ case $1 in
   ;;
 "clean")
   find "$HOME" -name '*.zwc' -delete
-  ;;
-"reload-completions")
-  zsh -i -c "autoload -U compaudit && autoload -Uz compinit && compinit"
-
-  output::empty_line
-  output::answer 'Now restart your terminal'
   ;;
 *)
   exit 1

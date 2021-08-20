@@ -6,9 +6,6 @@ setopt HIST_FCNTL_LOCK
 setopt +o nomatch
 # setopt autopushd
 
-# Start zim
-source "$ZIM_HOME/init.zsh"
-
 # Async mode for autocompletion
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_HIGHLIGHT_MAXLENGTH=300

@@ -8,9 +8,21 @@ export THEME_MODE="dark"
 export THEME_PROMPT_IN_NEW_LINE=false
 
 # ------------------------------------------------------------------------------
+# SDK MAN
+# ------------------------------------------------------------------------------
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export SDKMAN_DIR="$HOME/.sdkman"
+
+
+# ------------------------------------------------------------------------------
 # Languages
 # ------------------------------------------------------------------------------
 export GOPATH="$HOME/go"
+export JAVA_HOME="$HOME/.sdkman/candidates/java/current"
+export ES_JAVA_HOME="$HOME/.sdkman/candidates/java/current"
+export M2_HOME="$HOME/.sdkman/candidates/maven/current"
+export GRADLE_HOME="$HOME/.sdkman/candidates/gradle/current"
 
 # ------------------------------------------------------------------------------
 # Apps
@@ -38,6 +50,10 @@ export path=(
   "$HOME/bin"
   "$DOTFILES_PATH/bin"
   "$HOME/.cargo/bin"
+  "$JAVA_HOME/bin"
+  "$GOPATH/bin"
+  "$M2_HOME/bin"
+  "$GRADLE_HOME/bin"
   "/usr/local/bin"
   "/usr/local/sbin"
   "/bin"

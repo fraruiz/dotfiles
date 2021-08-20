@@ -3,8 +3,6 @@
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 
-export ZIM_HOME="$DOTFILES_PATH/modules/zimfw"
-
 ##? Install DOTFILES and setup dotfiles
 ##?
 ##? Usage:
@@ -28,13 +26,5 @@ script::depends_on docpars fzf zsh python
 output::answer "Setting up symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true
 
-output::answer "Installing zim"
-zsh "$ZIM_HOME/zimfw.zsh" install | log::file "Installing zim"
-
-output::answer "Installing completions"
-"$DOTFILES_PATH/bin/dot" shell zsh reload-completions
-
-output::answer "Setting up workspace"
-if [ ! -d "$HOME/Develop" ]; then
-    mkdir "$HOME/Develop" | log::file "Setting up workspace"
-fi
+output::answer "Setting up Development environment"
+"$DOTFILES_PATH/bin/dot" environment install | log::file "Setting up Development environment" || true

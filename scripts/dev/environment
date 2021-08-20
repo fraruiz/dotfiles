@@ -1,0 +1,93 @@
+#!/usr/bin/env bash
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Development environment helpers
+##?
+##? Usage:
+##?   environment install
+##?   environment test
+docs::parse "$@"
+
+case $1 in
+"install")
+
+  if [ ! -d "$HOME/Develop" ]; then
+    output::answer "Creating workspace folder"
+    mkdir "$HOME/Develop" | log::file "Creating workspace"
+  fi
+
+  if ! platform::command_exists sdk; then
+    output::answer "Installing SDKMAN"
+    curl -s "https://get.sdkman.io" | bash | log::file "Installing SDKMAN"
+    source "$HOME/.sdkman/bin/sdkman-init.sh" | log::file "Initialization SDKMAN"
+  fi
+
+  if ! platform::command_exists docker; then
+    if platform::is_linux; then
+      output::answer "🐳 Installing Docker"
+
+      bash <(curl -s https://get.docker.com/)
+
+      if platform::command_exists docker; then
+        output::write "✅ Docker installed!"
+      fi
+   	else
+      if platform::is_macos; then
+			  output::error "Unsupported operating system 'macOS'"
+      elif platform::is_wsl; then
+			  output::error "We recommend using Docker Desktop for Windows."
+		  fi
+		  output::error "Please get Docker Desktop from https://www.docker.com/products/docker-desktop"
+	  fi
+  fi
+
+  ;;
+"test")
+  if [ ! -d "$HOME/Develop" ]; then
+    output::answer "Creating workspace folder"
+  else
+    output::answer "Creating workspace folder"
+  fi
+
+  if platform::command_exists sdk; then
+    output::write "✅ SDKMAN installed!"
+  else
+    output::write "❌ SDKMAN NOT installed!"
+  fi
+
+  if platform::command_exists java; then
+    output::write "✅ Java installed!"
+  else
+    output::write "❌ Java NOT installed!"
+  fi
+
+  if platform::command_exists gradle; then
+    output::write "✅ Gradle installed!"
+  else
+    output::write "❌ Gradle NOT installed!"
+  fi
+
+  if platform::command_exists mvn; then
+    output::write "✅ Maven installed!"
+  else
+    output::write "❌ Maven NOT installed!"
+  fi
+
+  if platform::command_exists go; then
+    output::write "✅ Golang installed!"
+  else
+    output::write "❌ Golang NOT installed!"
+  fi
+
+  if platform::command_exists docker; then
+    output::write "✅ Docker installed!"
+  else
+    output::write "❌ Docker NOT installed!"
+  fi
+
+  ;;
+*)
+  exit 1
+  ;;
+esac

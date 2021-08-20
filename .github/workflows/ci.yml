@@ -24,7 +24,7 @@ jobs:
           echo "DOTFILES_PR_REPOSITORY=${{ github.event.pull_request.head.repo.full_name }}" >> $GITHUB_ENV
       - name: Set current repository and branch
         run: |
-          echo "DOTFILES_REPOSITORY=${DOTFILES_PR_REPOSITORY:-franciscoruizar/dotfiles}" >> $GITHUB_ENV
+          echo "DOTFILES_REPOSITORY=${DOTFILES_PR_REPOSITORY:-franciscorzl/dotfiles}" >> $GITHUB_ENV
           echo "DOTFILES_BRANCH=${{ github.head_ref }}" >> $GITHUB_ENV
           echo "DOTFILES_ENV=CI" >> $GITHUB_ENV
       - name: Install
@@ -36,4 +36,4 @@ jobs:
           echo "DOTFILES_REPOSITORY: $DOTFILES_REPOSITORY"
           echo "DOTFILES_BRANCH: $DOTFILES_BRANCH"
           echo "DOTFILES_ENV: $DOTFILES_ENV"
-          cat "$HOME/.dotfiles.log"
+          cat "$HOME/dotfiles.log"

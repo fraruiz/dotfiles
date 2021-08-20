@@ -3,7 +3,7 @@
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 
-##? Install DOTFILES and setup dotfiles
+##? Install and setup dotfiles
 ##?
 ##? Usage:
 ##?    install

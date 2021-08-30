@@ -15,4 +15,6 @@ projects_root_directory="$HOME/Develop/"
 project_directories=$(printf '%s\n' "${projects_root_directory}" | xargs ls)
 project_directory=$(echo "$project_directories" | fzf)
 
-cd "$HOME/Develop/$project_directory"
+echo $projects_root_directory$project_directory
+cd $projects_root_directory$project_directory
+$SHELL

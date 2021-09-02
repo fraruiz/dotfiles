@@ -44,16 +44,16 @@ case $1 in
 
   ;;
 "test")
-  if [ ! -d "$HOME/Develop" ]; then
-    output::answer "Creating workspace folder"
+  if [ -d "$HOME/Develop" ]; then
+    output::write "✅ Workspace folder exists!"
   else
-    output::answer "Creating workspace folder"
+    output::write "❌ Workspace folder not exists!"
   fi
 
-  if platform::command_exists sdk; then
+  if [ -d $SDKMAN_DIR ]; then
     output::write "✅ SDKMAN installed!"
   else
-    output::write "❌ SDKMAN NOT installed!"
+    output::write "❌ SDKMAN not installed!"
   fi
 
   if platform::command_exists java; then

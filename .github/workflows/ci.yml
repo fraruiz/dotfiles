@@ -19,14 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set current repository for pull requests
-        run: |
-          echo "DOTFILES_PR_REPOSITORY=${{ github.event.pull_request.head.repo.full_name }}" >> $GITHUB_ENV
-      - name: Set current repository and branch
-        run: |
-          echo "DOTFILES_REPOSITORY=${DOTFILES_PR_REPOSITORY:-franciscorzl/dotfiles}" >> $GITHUB_ENV
-          echo "DOTFILES_BRANCH=${{ github.head_ref }}" >> $GITHUB_ENV
-          echo "DOTFILES_ENV=CI" >> $GITHUB_ENV
       - name: Install
         run: echo "$HOME/.dotfiles" | bash installer
 

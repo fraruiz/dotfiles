@@ -1,5 +1,4 @@
 export DOTFILES_PATH="$HOME/.dotfiles"
-export DOTFILES_THEME="lambda"
 
 if [[ "$(ps -p $$ -ocomm=)" =~ (bash$) ]]; then
   __right_prompt() {
@@ -14,6 +13,7 @@ if [[ "$(ps -p $$ -ocomm=)" =~ (bash$) ]]; then
 fi
 
 source "$DOTFILES_PATH/shell/init.sh"
+source "$DOTFILES_PATH/shell/bash/theme.sh"
 
 PATH=$(
   IFS=":"
@@ -21,15 +21,6 @@ PATH=$(
 )
 export PATH
 
-themes_paths=(
-  "$DOTFILES_PATH/shell/bash/themes"
-  "$DOTFILES_PATH/shell/bash/themes"
-)
-
-for THEME_PATH in ${themes_paths[@]}; do
-  THEME_PATH="${THEME_PATH}/$DOTFILES_THEME.sh"
-  [ -f "$THEME_PATH" ] && source "$THEME_PATH" && break
-done
 
 for bash_file in "$DOTFILES_PATH"/shell/bash/completions/_*; do
   source "$bash_file"

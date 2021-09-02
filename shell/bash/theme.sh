@@ -1,11 +1,10 @@
-
-PROMPT_COMMAND="lambda_theme"
+PROMPT_COMMAND="theme"
 
 MIDDLE_CHARACTER="λ"
 GREEN_COLOR="32"
 RED_COLOR="31"
 
-lambda_theme() {
+theme() {
   LAST_CODE="$?"
   current_dir=$(dot filesystem short-pwd)
   STATUS_COLOR=$GREEN_COLOR

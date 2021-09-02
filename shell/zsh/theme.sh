@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 THEME_MODE=${THEME_MODE:-"dark"}
-THEME_PROMPT_IN_NEW_LINE=${THEME_PROMPT_IN_NEW_LINE:-false}
 
 [[ $(echotc Co) -gt 100 ]] && support_color_tones=true || support_color_tones=false
 
@@ -50,11 +49,14 @@ prompt_git() {
 
   if [ "$inside_git_repo" ]; then
     branch_name=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
-    git_status="%F{$git_no_changes_status_color} $git_no_changes_status"
+
+    git_status="%F{$git_no_changes_status_color}$git_no_changes_status"
     changed=$(git status --porcelain)
+
     if [ -n "${changed}" ]; then
         git_status="%F{$git_dirty_status_color}$git_dirty_status"
     fi
+
     print -n "%F{$git_on_branch_color} on $branch_name $git_status"
   fi
 }

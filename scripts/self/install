@@ -25,6 +25,3 @@ script::depends_on docpars fzf zsh python
 
 output::answer "Setting up symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true
-
-output::answer "Setting up Development environment"
-"$DOTFILES_PATH/bin/dot" environment install | log::file "Setting up Development environment" || true

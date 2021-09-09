@@ -20,7 +20,6 @@ case $1 in
   if ! platform::command_exists sdk; then
     output::answer "Installing SDKMAN"
     dot package add zip | curl -s "https://get.sdkman.io" | bash | log::file "Installing SDKMAN"
-    source "$HOME/.sdkman/bin/sdkman-init.sh" | log::file "Initialization SDKMAN"
   fi
 
   if ! platform::command_exists docker; then

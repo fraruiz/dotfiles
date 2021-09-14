@@ -1,5 +1,4 @@
 # My dotfiles
-![image description](docs/record.gif)
 
 ## 🚀 Installation
 

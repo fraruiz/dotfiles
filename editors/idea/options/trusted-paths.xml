@@ -1,9 +1,0 @@
-<application>
-  <component name="Trusted.Paths.Settings">
-    <option name="TRUSTED_PATHS">
-      <list>
-        <option value="$USER_HOME$/Develop" />
-      </list>
-    </option>
-  </component>
-</application>

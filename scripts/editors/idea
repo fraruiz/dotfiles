@@ -8,7 +8,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   idea install-all
 ##?   idea install-templates
 ##?   idea install-styles
-##?
 ##?   idea update-all
 ##?   idea update-templates
 ##?   idea update-styles

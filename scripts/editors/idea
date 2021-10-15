@@ -39,21 +39,21 @@ case $1 in
 	output::answer "Setup File Templates of IntellijIDEA"
 	intellij_file_templates_folder="$preferences_dir/$intellij_version/fileTemplates"
 	rm -rf "$intellij_file_templates_folder"
-	cp "$DOTFILES_PATH/editors/idea/fileTemplates/" "$intellij_file_templates_folder"
+	cp -r "$DOTFILES_PATH/editors/idea/fileTemplates/" "$intellij_file_templates_folder"
 	output::write "✅ Done"
   ;;
 "install-styles")
 	output::answer "Setup File Styles of IntellijIDEA"
 	intellij_code_styles_folder="$preferences_dir/$intellij_version/codestyles"
 	rm -rf "$intellij_code_styles_folder"
-	cp "$DOTFILES_PATH/editors/idea/codestyles/" "$intellij_code_styles_folder"
+	cp -r "$DOTFILES_PATH/editors/idea/codestyles/" "$intellij_code_styles_folder"
 	output::write "✅ Done"
   ;;
 "install-options")
 	output::answer "Setup File Options of IntellijIDEA"
 	intellij_options_folder="$preferences_dir/$intellij_version/options"
 	rm -rf "$intellij_options_folder"
-	cp "$DOTFILES_PATH/editors/idea/options/" "$intellij_options_folder"
+	cp -r "$DOTFILES_PATH/editors/idea/options/" "$intellij_options_folder"
 	output::write "✅ Done"
   ;;
 "update-all")
@@ -65,21 +65,21 @@ case $1 in
 	output::answer "Update File Templates of IntellijIDEA"
 	intellij_file_templates_folder="$preferences_dir/$intellij_version/fileTemplates"
 	rm -rf "$DOTFILES_PATH/editors/idea/fileTemplates/"
-	cp "$intellij_file_templates_folder" "$DOTFILES_PATH/editors/idea/fileTemplates/"
+	cp -r "$intellij_file_templates_folder" "$DOTFILES_PATH/editors/idea/fileTemplates/"
 	output::write "✅ Done"
   ;;
 "update-styles")
 	output::answer "Update File Styles of IntellijIDEA"
 	intellij_code_styles_folder="$preferences_dir/$intellij_version/codestyles"
 	rm -rf "$DOTFILES_PATH/editors/idea/codestyles/"
-	cp "$intellij_code_styles_folder" "$DOTFILES_PATH/editors/idea/codestyles/"
+	cp -r "$intellij_code_styles_folder" "$DOTFILES_PATH/editors/idea/codestyles/"
 	output::write "✅ Done"
   ;;
 "update-options")
 	output::answer "Update File Options of IntellijIDEA"
 	intellij_options_folder="$preferences_dir/$intellij_version/options"
 	rm -rf "$DOTFILES_PATH/editors/idea/options/"
-	cp "$intellij_options_folder" "$DOTFILES_PATH/editors/idea/options/"
+	cp -r "$intellij_options_folder" "$DOTFILES_PATH/editors/idea/options/"
 	output::write "✅ Done"
   ;;
 *)

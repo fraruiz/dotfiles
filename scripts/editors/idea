@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Install or update IntellijIDEA settings
+##?
+##? Usage:
+##?   idea install-all
+##?   idea install-templates
+##?   idea install-styles
+##?   idea install-options
+##?
+##?   idea update-all
+##?   idea update-templates
+##?   idea update-styles
+##?   idea update-options
+docs::parse "$@"
+
+if platform::is_wsl; then
+  exit 1;
+fi
+
+preferences_dir=""
+if platform::is_macos; then
+	preferences_dir="$HOME/Library/Application Support/JetBrains"
+else
+	preferences_dir="$HOME/.config/JetBrains"
+fi
+
+intellij_version=$(ls "$preferences_dir" | grep 'IntelliJIdea\|IdeaIC' | sort -r | head -n 1)
+
+case $1 in
+"install-all")
+	"$DOTFILES_PATH/bin/dot" editors idea install-templates
+    "$DOTFILES_PATH/bin/dot" editors idea install-styles
+	"$DOTFILES_PATH/bin/dot" editors idea install-options
+  ;;
+"install-templates")
+	output::answer "Setup File Templates of IntellijIDEA"
+	intellij_file_templates_folder="$preferences_dir/$intellij_version/fileTemplates"
+	rm -rf "$intellij_file_templates_folder"
+	cp "$DOTFILES_PATH/editors/idea/fileTemplates/" "$intellij_file_templates_folder"
+	output::write "✅ Done"
+  ;;
+"install-styles")
+	output::answer "Setup File Styles of IntellijIDEA"
+	intellij_code_styles_folder="$preferences_dir/$intellij_version/codestyles"
+	rm -rf "$intellij_code_styles_folder"
+	cp "$DOTFILES_PATH/editors/idea/codestyles/" "$intellij_code_styles_folder"
+	output::write "✅ Done"
+  ;;
+"install-options")
+	output::answer "Setup File Options of IntellijIDEA"
+	intellij_options_folder="$preferences_dir/$intellij_version/options"
+	rm -rf "$intellij_options_folder"
+	cp "$DOTFILES_PATH/editors/idea/options/" "$intellij_options_folder"
+	output::write "✅ Done"
+  ;;
+"update-all")
+	"$DOTFILES_PATH/bin/dot" editors idea update-templates
+    "$DOTFILES_PATH/bin/dot" editors idea update-styles
+	"$DOTFILES_PATH/bin/dot" editors idea update-options
+  ;;
+"update-templates")
+	output::answer "Update File Templates of IntellijIDEA"
+	intellij_file_templates_folder="$preferences_dir/$intellij_version/fileTemplates"
+	rm -rf "$DOTFILES_PATH/editors/idea/fileTemplates/"
+	cp "$intellij_file_templates_folder" "$DOTFILES_PATH/editors/idea/fileTemplates/"
+	output::write "✅ Done"
+  ;;
+"update-styles")
+	output::answer "Update File Styles of IntellijIDEA"
+	intellij_code_styles_folder="$preferences_dir/$intellij_version/codestyles"
+	rm -rf "$DOTFILES_PATH/editors/idea/codestyles/"
+	cp "$intellij_code_styles_folder" "$DOTFILES_PATH/editors/idea/codestyles/"
+	output::write "✅ Done"
+  ;;
+"update-options")
+	output::answer "Update File Options of IntellijIDEA"
+	intellij_options_folder="$preferences_dir/$intellij_version/options"
+	rm -rf "$DOTFILES_PATH/editors/idea/options/"
+	cp "$intellij_options_folder" "$DOTFILES_PATH/editors/idea/options/"
+	output::write "✅ Done"
+  ;;
+*)
+  exit 1
+  ;;
+esac 

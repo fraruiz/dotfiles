@@ -8,7 +8,7 @@
 
 1. Execute installer
    ```bash
-   bash <(curl -s https://raw.githubusercontent.com/franciscorzl/dotfiles/HEAD/installer)
+   bash <(curl -s https://raw.githubusercontent.com/fraruiz/dotfiles/HEAD/installer)
    ```
 2. Switch to zsh shell (Optional)
     ```bash

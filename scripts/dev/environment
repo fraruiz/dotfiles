@@ -55,30 +55,6 @@ case $1 in
     output::write "❌ SDKMAN not installed!"
   fi
 
-  if platform::command_exists java; then
-    output::write "✅ Java installed!"
-  else
-    output::write "❌ Java NOT installed!"
-  fi
-
-  if platform::command_exists gradle; then
-    output::write "✅ Gradle installed!"
-  else
-    output::write "❌ Gradle NOT installed!"
-  fi
-
-  if platform::command_exists mvn; then
-    output::write "✅ Maven installed!"
-  else
-    output::write "❌ Maven NOT installed!"
-  fi
-
-  if platform::command_exists go; then
-    output::write "✅ Golang installed!"
-  else
-    output::write "❌ Golang NOT installed!"
-  fi
-
   if platform::command_exists docker; then
     output::write "✅ Docker installed!"
   else

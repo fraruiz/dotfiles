@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Create hotfix branch
+##?
+##? Usage:
+##?   hotfix <branch_name>
+docs::parse "$@"
+
+git checkout master
+git pull origin master
+git checkout -b "hotfix/$1"
+
+echo "Hotfix branch created 🤘"

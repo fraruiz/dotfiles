@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Create and push release branch
+##?
+##? Usage:
+##?   release
+docs::parse "$@"
+
+date_format=$(date +'%m%d%Y')
+
+git checkout develop
+git pull origin develop
+git checkout -b "release/${date_format}"
+git push --set-upstream "origin" "release/${date_format}"
+
+echo "Release branch created 🤘"

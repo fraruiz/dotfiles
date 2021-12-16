@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Create feature branch
+##?
+##? Usage:
+##?   feature <branch_name>
+docs::parse "$@"
+
+git checkout develop
+git pull origin develop
+git checkout -b "feature/$1"
+
+echo "Feature branch created 🤘"

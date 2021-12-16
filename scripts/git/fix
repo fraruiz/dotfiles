@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Create fix branch
+##?
+##? Usage:
+##?   fix <branch_name>
+docs::parse "$@"
+
+git checkout develop
+git pull origin develop
+git checkout -b "fix/$1"
+
+echo "Fix branch created 🤘"

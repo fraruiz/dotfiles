@@ -25,6 +25,10 @@ alias gl='dot git pretty-log'
 alias ga='dot git amend'
 alias gundo='dot git undo'
 alias gdiscard='dot git discard'
+alias feature='dot git feature'
+alias fix='dot git fix'
+alias hotfix='dot git hotfix'
+alias release='dot git release'
 
 #Docker
 alias dconn='dot docker connect'

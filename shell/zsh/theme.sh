@@ -37,7 +37,7 @@ prompt_git() {
   inside_git_repo="$(git rev-parse --is-inside-work-tree 2>/dev/null)"
 
   if [ "$inside_git_repo" ]; then
-    branch_name=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+    branch_name=$(git symbolic-ref HEAD 2> /dev/null | awk '{gsub("refs/heads/",""); print}')
     git_branch="%F{$git_branch_color}$branch_name"
 
     git_status="%F{$git_no_changes_status_color}$git_no_changes_status"

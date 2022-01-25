@@ -17,8 +17,6 @@ case $1 in
   sudo sh -c "echo '$asl_conf' > /etc/asl.conf"
   echo "ASL only storing critical files!"
 
-  zsh "$ZIM_HOME/zimfw.zsh" clean-compiled && zsh "$ZIM_HOME/zimfw.zsh" compile
-
   "$DOTFILES_PATH/bin/dot" shell zsh reload_completions
   ;;
 "test_performance")

@@ -41,9 +41,6 @@ ln -s $DOTFILES_PATH/shell/zsh/.zshenv ~/.zshenv
 ensure_if_exists_file ~/.zshrc
 ln -s $DOTFILES_PATH/shell/zsh/.zshrc ~/.zshrc
 
-ensure_if_exists_file ~/.zshrc
-ln -s $DOTFILES_PATH/shell/zsh/.zimrc ~/.zimrc
-
 # Git
 
 ensure_if_exists_file ~/.gitattributes

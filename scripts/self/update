@@ -10,9 +10,9 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?    update
 docs::parse "$@"
 
-cd "$DOTLY_PATH"
+cd "$DOTFILES_PATH"
 git discard >/dev/null 2>&1
-git checkout main >/dev/null 2>&1
+git checkout master >/dev/null 2>&1
 git pull >/dev/null 2>&1
 git submodule update --init --recursive >/dev/null 2>&1
 

@@ -11,6 +11,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 docs::parse "$@"
 script::depends_on tail
 
-file=${DOTFILES_LOG_FILE:-$HOME/.dotfiles.log}
+file=${DOTFILES_LOG_FILE:-$HOME/dotfiles.log}
 
 tail -f "$file"

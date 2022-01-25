@@ -9,6 +9,11 @@ source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 ##?    install
 docs::parse "$@"
 
+script::depends_on docpars fzf zsh python cargo
+
+export ZIM_HOME="$DOTFILES_PATH/shell/zsh/.zim"
+export PATH="$HOME/.cargo/bin:$PATH"
+
 if platform::is_macos; then
   output::answer "🍎 Setting up macOS platform"
   install_macos_custom
@@ -17,15 +22,8 @@ else
   install_linux_custom
 fi
 
-script::depends_on cargo
-
-export PATH="$HOME/.cargo/bin:$PATH"
-
-script::depends_on docpars fzf zsh python
-
 output::answer "Setting up symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true
-
 
 if ! str::contains zsh "$SHELL"; then
   output::answer "Setting zsh as the default shell"

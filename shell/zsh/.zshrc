@@ -14,9 +14,9 @@ source "$DOTFILES_PATH/shell/init.sh"
 
 fpath=("$DOTFILES_PATH/shell/zsh/completions" $fpath)
 
-source "$DOTFILES_PATH/shell/zsh/theme.sh"
-
 source "$DOTFILES_PATH/shell/zsh/bindings/dot.zsh"
 source "$DOTFILES_PATH/shell/zsh/bindings/reverse_search.zsh"
 source "$DOTFILES_PATH/shell/zsh/key-bindings.zsh"
 source "$ZIM_HOME/init.zsh"
+
+source "$DOTFILES_PATH/shell/zsh/theme.sh"

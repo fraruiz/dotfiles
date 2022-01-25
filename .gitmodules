@@ -1,3 +1,3 @@
-[submodule "modules/suggestions"]
-	path = modules/suggestions
-	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "modules/zimfw"]
+	path = modules/zimfw
+	url = https://github.com/zimfw/zimfw.git

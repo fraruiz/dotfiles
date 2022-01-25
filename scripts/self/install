@@ -32,6 +32,3 @@ fi
 
 output::answer "Installing Zim"
 curl -fsSL --create-dirs -o "$ZIM_HOME/zimfw.zsh" https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh 2>&1 && zsh "$ZIM_HOME/zimfw.zsh" install 2>&1
-
-output::answer "Installing completions"
-"$DOTFILES_PATH/bin/dot" shell zsh reload_completions

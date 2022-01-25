@@ -36,6 +36,12 @@ case $1 in
 "clean")
   find "$HOME" -name '*.zwc' -delete
   ;;
+"reload_completions")
+  zsh -i -c "autoload -U compaudit && autoload -Uz compinit && compinit"
+
+  output::empty_line
+  output::answer 'Now restart your terminal'
+  ;;
 *)
   exit 1
   ;;

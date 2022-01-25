@@ -2,7 +2,3 @@
 	path = modules/zimfw
 	url = https://github.com/zimfw/zimfw.git
 	ignore = dirty
-[submodule "modules/z"]
-	path = modules/z
-	url = https://github.com/rupa/z.git
-	ignore = dirty

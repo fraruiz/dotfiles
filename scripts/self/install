@@ -3,14 +3,6 @@
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 
-##? Install and setup dotfiles
-##?
-##? Usage:
-##?    install
-docs::parse "$@"
-
-script::depends_on docpars fzf zsh python cargo
-
 export ZIM_HOME="$DOTFILES_PATH/shell/zsh/.zim"
 export PATH="$HOME/.cargo/bin:$PATH"
 
@@ -22,6 +14,15 @@ else
   install_linux_custom
 fi
 
+script::depends_on docpars fzf zsh python cargo
+
+
+##? Install and setup dotfiles
+##?
+##? Usage:
+##?    install
+docs::parse "$@"
+
 output::answer "Setting up symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true
 
@@ -32,3 +33,6 @@ fi
 
 output::answer "Installing Zim"
 curl -fsSL --create-dirs -o "$ZIM_HOME/zimfw.zsh" https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh 2>&1 && zsh "$ZIM_HOME/zimfw.zsh" install 2>&1
+
+output::answer "Installing completions"
+"$DOTFILES_PATH/bin/dot" shell zsh reload_completions

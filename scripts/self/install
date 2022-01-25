@@ -3,7 +3,6 @@
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 
-export ZIM_HOME="$DOTFILES_PATH/shell/zsh/.zim"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 if platform::is_macos; then

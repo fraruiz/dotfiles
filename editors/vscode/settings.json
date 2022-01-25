@@ -1,0 +1,64 @@
+{
+    "workbench.colorTheme": "Codely Dark",
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.openEditors.visible": 0,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "search.useGlobalIgnoreFiles": true,
+    "files.autoSave": "onFocusChange",
+    "files.associations": {
+      "Dockerfile-*": "dockerfile"
+    },
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "Dank Mono, Menlo, Monaco, 'Courier New', monospace",
+    "workbench.editor.untitled.hint": "hidden",
+    "editor.fontSize": 14,
+    "editor.lineHeight": 32,
+    "editor.rulers": [
+    
+      120
+    ],
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "indent",
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.list.horizontalScrolling": true,
+    "terminal.integrated.fontFamily": "Dank Mono, Hack, Menlo, Monaco, monospace",
+    "terminal.integrated.fontSize": 16,
+    "terminal.integrated.lineHeight": 1.4,
+    "git.autofetch": true,
+    "git.alwaysSignOff": true,
+    "git.fetchOnPull": true,
+    "git.rebaseWhenSync": true,
+    "git.showPushSuccessNotification": true,
+    "workbench.sideBar.location": "left",
+    "workbench.editor.showTabs": false,
+    "workbench.fontAliasing": "auto",
+    "editor.renderWhitespace": "all",
+    "editor.suggestSelection": "first",
+    "json.schemas": [
+      {
+        "fileMatch": [
+          "ci.yml"
+        ],
+        "url": "https://json.schemastore.org/github-workflow"
+      }
+    ],
+    "[yaml]": {},
+    "window.zoomLevel": 1,
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.minimap.enabled": false,
+    "workbench.editorAssociations": {
+      "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "redhat.telemetry.enabled": true,
+    "[html]": {
+      "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+    },
+    "editor.multiCursorModifier": "ctrlCmd",
+    "files.exclude": {
+      "**/.classpath": true,
+      "**/.project": true,
+      "**/.settings": true,
+      "**/.factorypath": true
+    }
+  }

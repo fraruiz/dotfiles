@@ -6,8 +6,9 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?   zsh optimize
-##?   zsh test-performance
-##?   zsh clean
+##?   zsh test_performance
+##?   zsh reload_completions
+##?   zsh clean_cache
 docs::parse "$@"
 
 case $1 in
@@ -16,25 +17,31 @@ case $1 in
   sudo sh -c "echo '$asl_conf' > /etc/asl.conf"
   echo "ASL only storing critical files!"
 
-  find "$DOTFILES_PATH/shell/zsh" -name '*.zwc' -exec rm -rf {} \;
-  find "$DOTFILES_PATH/shell/zsh" -name '*.old' -exec rm -rf {} \;
+  zsh "$ZIM_HOME/zimfw.zsh" clean-compiled && zsh "$ZIM_HOME/zimfw.zsh" compile
 
-  /bin/zsh -c "source ${ZDOTDIR:-${HOME}}/.zlogin"
-
-  "$DOTFILES_PATH/bin/dot" shell zsh reload-completions
+  "$DOTFILES_PATH/bin/dot" shell zsh reload_completions
   ;;
-"test-performance")
+"test_performance")
   script::depends_on hyperfine
 
-  hyperfine '/bin/zsh -i -c exit' --warmup 1
+  hyperfine '/bin/zsh -i -c exit' '/opt/homebrew/bin/zsh -i -c exit' --warmup 1
 
   echo ""
   echo "ZSH INFO:"
-  echo "  💻 ZSH 📂 /bin/zsh              - $(/bin/zsh --version)"
+  echo "  💻 ZSH       📂 /bin/zsh                    - $(/bin/zsh --version)"
+  echo "  🍺 Brew ZSH  📂 /opt/homebrew/bin/zsh       - $(/opt/homebrew/bin/zsh --version)"
+
   echo ""
+  echo "✨ Currently using $(command -v zsh) ✨"
   ;;
-"clean")
+"clean_cache")
   find "$HOME" -name '*.zwc' -delete
+  ;;
+"reload_completions")
+  zsh -i -c "autoload -U compaudit && autoload -Uz compinit && compinit"
+
+  output::empty_line
+  output::answer 'Now restart your terminal'
   ;;
 *)
   exit 1

@@ -138,6 +138,7 @@ git clone "https://github.com/$DOTFILES_REPOSITORY.git" "$DOTFILES_PATH" 2>&1 | 
 
 cd $DOTFILES_PATH
 
+chmod u+x $DOTFILES_PATH
 "$PWD/bin/dot" self install
 
 _a "🎉 dotfiles installed correctly! 🎉"

@@ -3,3 +3,5 @@
 shell/zsh/.zim/
 shell/zsh/**/**.zwc
 shell/zsh/**/**.zwc.old
+
+git/.gitconfig

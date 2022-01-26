@@ -3,6 +3,12 @@
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 
+##? Install and setup dotfiles
+##?
+##? Usage:
+##?    install
+docs::parse "$@"
+
 export PATH="$HOME/.cargo/bin:$PATH"
 
 if platform::is_macos; then
@@ -15,12 +21,6 @@ fi
 
 script::depends_on docpars fzf zsh python cargo
 
-##? Install and setup dotfiles
-##?
-##? Usage:
-##?    install
-docs::parse "$@"
-
 output::answer "Setting up symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true
 
@@ -30,4 +30,4 @@ if ! str::contains zsh "$SHELL"; then
 fi
 
 output::answer "Installing completions"
-"$DOTFILES_PATH/bin/dot" shell zsh reload_completions
+"$DOTFILES_PATH/bin/dot" shell zsh reload

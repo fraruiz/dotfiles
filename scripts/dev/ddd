@@ -4,7 +4,7 @@ set -euo pipefail
 
 source "$DOTFILES_PATH/scripts/core/_main.sh"
 
-##? DDD
+##? DDD: Create application, domain and infrastructure folders
 #?? 1.0.0
 ##?
 ##? Usage:

@@ -6,9 +6,9 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?
 ##? Usage:
 ##?   zsh optimize
-##?   zsh test_performance
-##?   zsh reload_completions
-##?   zsh clean_cache
+##?   zsh test
+##?   zsh reload
+##?   zsh clean
 docs::parse "$@"
 
 case $1 in
@@ -19,9 +19,9 @@ case $1 in
 
   zsh "$ZIM_HOME/zimfw.zsh" clean-compiled && zsh "$ZIM_HOME/zimfw.zsh" compile
 
-  "$DOTFILES_PATH/bin/dot" shell zsh reload_completions
+  "$DOTFILES_PATH/bin/dot" shell zsh reload
   ;;
-"test_performance")
+"test")
   script::depends_on hyperfine
 
   hyperfine '/bin/zsh -i -c exit' --warmup 1
@@ -33,10 +33,10 @@ case $1 in
   echo ""
   echo "✨ Currently using $(command -v zsh) ✨"
   ;;
-"clean_cache")
+"clean")
   find "$HOME" -name '*.zwc' -delete
   ;;
-"reload_completions")
+"reload")
   zsh -i -c "autoload -U compaudit && autoload -Uz compinit && compinit"
 
   output::empty_line

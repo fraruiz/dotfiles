@@ -17,17 +17,18 @@ case $1 in
   sudo sh -c "echo '$asl_conf' > /etc/asl.conf"
   echo "ASL only storing critical files!"
 
+  zsh "$ZIM_HOME/zimfw.zsh" clean-compiled && zsh "$ZIM_HOME/zimfw.zsh" compile
+
   "$DOTFILES_PATH/bin/dot" shell zsh reload_completions
   ;;
 "test_performance")
   script::depends_on hyperfine
 
-  hyperfine '/bin/zsh -i -c exit' '/opt/homebrew/bin/zsh -i -c exit' --warmup 1
+  hyperfine '/bin/zsh -i -c exit' --warmup 1
 
   echo ""
   echo "ZSH INFO:"
   echo "  💻 ZSH       📂 /bin/zsh                    - $(/bin/zsh --version)"
-  echo "  🍺 Brew ZSH  📂 /opt/homebrew/bin/zsh       - $(/opt/homebrew/bin/zsh --version)"
 
   echo ""
   echo "✨ Currently using $(command -v zsh) ✨"

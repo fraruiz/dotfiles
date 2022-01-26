@@ -138,6 +138,8 @@ fi
 _a "Cloning dotfiles"
 git clone "https://github.com/$DOTFILES_REPOSITORY.git" "$DOTFILES_PATH" 2>&1 | _log "Clone dotfiles"
 
+sudo chmod -R 755 $DOTFILES_PATH
+
 cd $DOTFILES_PATH
 
 "$PWD/bin/dot" self install

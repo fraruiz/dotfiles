@@ -32,8 +32,8 @@ alias release='dot git release'
 
 #Docker
 alias dconn='dot docker connect'
-alias dps='dot docker ps'
-alias dpsa='dot docker psa'
+alias dps='docker ps'
+alias dpsa='docker ps -a'
 alias dexec='dot docker exec'
 alias dprune='dot docker prune'
 alias dstop='dot docker stop'

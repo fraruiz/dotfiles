@@ -7,6 +7,8 @@ set -euo pipefail
 ##? Usage:
 ##?    installer
 
+sudo -v
+
 DOTFILES_REPOSITORY=${DOTFILES_REPOSITORY:-fraruiz/dotfiles}
 DOTFILES_BRANCH=${DOTFILES_BRANCH:-main}
 DOTFILES_LOG_FILE=${DOTFILES_LOG_FILE:-$HOME/dotfiles.log}
@@ -138,7 +140,6 @@ git clone "https://github.com/$DOTFILES_REPOSITORY.git" "$DOTFILES_PATH" 2>&1 | 
 
 cd $DOTFILES_PATH
 
-chmod u+x $DOTFILES_PATH
 "$PWD/bin/dot" self install
 
 _a "🎉 dotfiles installed correctly! 🎉"

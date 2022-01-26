@@ -9,6 +9,8 @@ source "$DOTFILES_PATH/scripts/self/utils/install.sh"
 ##?    install
 docs::parse "$@"
 
+sudo -v
+
 export PATH="$HOME/.cargo/bin:$PATH"
 
 if platform::is_macos; then

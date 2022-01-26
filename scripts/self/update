@@ -10,10 +10,13 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?    update
 docs::parse "$@"
 
+sudo -v
+
 cd "$DOTFILES_PATH"
-git discard >/dev/null 2>&1
+git stash push git/.gitconfig
+git reset --hard >/dev/null 2>&1
 git checkout master >/dev/null 2>&1
-git pull >/dev/null 2>&1
-chmod u+x $DOTFILES_PATH
+git pull origin master>/dev/null 2>&1
+git stash pop >/dev/null 2>&1
 
 output::answer '✅ dotfiles updated to the latest version'

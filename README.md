@@ -20,6 +20,12 @@
 dot self update
 ```
 
+## 🦾 Tools
+- [SDKMAN](https://sdkman.io/) for install programming languages
+- [Docker](https://www.docker.com/) installer
+- [ZIM Framework](https://zimfw.sh/)
+
+
 ## 🥳 Inspired on:
 
 - [Dotly](https://github.com/CodelyTV/dotly)

@@ -7,7 +7,8 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##? Switch to personal or work mail
 ##?
 ##? Usage:
-##?   mail <personal or work>
+##?   mail <personal>
+##?   mail <work>
 docs::parse "$@"
 
 if [ "$1" == "personal" ]; then

@@ -17,6 +17,12 @@ case $1 in
   if [ ! -d "$HOME/Develop" ]; then
     output::answer "Creating workspace folder"
     mkdir "$HOME/Develop" | log::file "Creating workspace"
+		
+		output::answer "Creating databases folder"
+    mkdir "$HOME/Develop/Databases" | log::file "Creating Databases workspace"
+		
+		output::answer "Creating scripts folder"
+    mkdir "$HOME/Develop/Scripts" | log::file "Creating Scripts workspace"
   fi
 
   if ! platform::command_exists sdk; then

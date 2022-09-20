@@ -14,8 +14,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   delete migration/
 docs::parse "$@"
 
-git checkout develop
-git pull origin develop
-git checkout -b "fix/$1"
+git branch | grep "$1" | xargs git branch -D
 
 echo "Delete all branch's 🤘"

@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Delete multiple branches based on a specified pattern
+##?
+##? Usage:
+##?   delete <branch_pattern>
+##?   delete fix/
+##?   delete feat/
+##?   delete release/
+##?   delete migration/
+docs::parse "$@"
+
+git checkout develop
+git pull origin develop
+git checkout -b "fix/$1"
+
+echo "Delete all branch's 🤘"

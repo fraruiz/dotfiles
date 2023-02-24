@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Create bugfix branch
+##?
+##? Usage:
+##?   bugfix <branch_name>
+docs::parse "$@"
+
+git checkout develop
+git pull origin develop
+git checkout -b "bugfix/$1"
+
+echo "Bugfix branch created 🤘"

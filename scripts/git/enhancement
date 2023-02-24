@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Create enhancement branch
+##?
+##? Usage:
+##?   enhancement <branch_name>
+docs::parse "$@"
+
+git checkout develop
+git pull origin develop
+git checkout -b "enhancement/$1"
+
+echo "Enhancement branch created 🤘"

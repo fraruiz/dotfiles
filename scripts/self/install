@@ -33,3 +33,5 @@ fi
 
 output::answer "Installing completions"
 "$DOTFILES_PATH/bin/dot" shell zsh reload
+
+setup_git_identity

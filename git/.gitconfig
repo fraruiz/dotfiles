@@ -1,12 +1,9 @@
-[user]
-	name = Francisco Ruiz
-	email = franciscoruizlezcano@gmail.com
-
 [fetch]
 	prune = true
 
 [push]
 	default = simple
+	autoSetupRemote = true
 
 [pull]
 	rebase = false

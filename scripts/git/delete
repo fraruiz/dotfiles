@@ -10,6 +10,6 @@ source "$DOTFILES_PATH/scripts/core/_main.sh"
 ##?   delete <branch_pattern>
 docs::parse "$@"
 
-git branch | grep "$1" | xargs git branch -d
+git branch | grep "$1" | xargs git branch -d -D
 
 echo "Delete all branch's 🤘"

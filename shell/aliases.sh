@@ -19,16 +19,16 @@ alias gf="git fetch --all -p"
 alias gps="git push"
 alias gpsf="git push --force"
 alias gpl="git pull --rebase --autostash"
-alias gb="git branch"
 alias gr='git restore .'
 alias grh='git reset --hard'
 alias gl='dot git pretty-log'
 alias ga='dot git amend'
+alias gb="git branch"
 alias gbfeat='dot git feature'
 alias gbfix='dot git fix'
-alias gbh='dot git hotfix'
-alias gbe='dot git enhancement'
-alias gbr='dot git release'
+alias gbhotfix='dot git hotfix'
+alias gbenhancement='dot git enhancement'
+alias gbrelease='dot git release'
 
 #Docker
 alias dconn='dot docker connect'

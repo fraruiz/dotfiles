@@ -55,4 +55,11 @@ ln -s $DOTFILES_PATH/git/.gitconfig ~/.gitconfig
 ensure_if_exists_file ~/.gitignore_global
 ln -s $DOTFILES_PATH/git/.gitignore_global ~/.gitignore_global
 
+# Vs Code
+ensure_if_exists_file ~/Library/Application\ Support/Code/User/settings.json
+ln -s $DOTFILES_PATH/editors/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+
+ensure_if_exists_file ~/Library/Application\ Support/Code/User/keybindings.json
+ln -s $DOTFILES_PATH/editors/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+
 log::success "Done!"

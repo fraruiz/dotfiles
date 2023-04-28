@@ -21,6 +21,5 @@ git reset --hard
 git checkout ${default_branch}
 git pull origin ${default_branch}
 git stash pop
-sudo chmod -R 755 $DOTFILES_PATH
 
 output::answer '✅ dotfiles updated to the latest version'

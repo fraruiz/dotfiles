@@ -13,11 +13,14 @@ docs::parse "$@"
 sudo -v
 
 cd "$DOTFILES_PATH"
-git stash push git/.gitconfig 2>&1
-git reset --hard >/dev/null 2>&1
-git checkout master >/dev/null 2>&1
-git pull origin master>/dev/null 2>&1
-git stash pop >/dev/null 2>&1
-sudo chmod -R 755 $DOTFILES_PATH 2>&1
+
+default_branch = $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+
+git stash push git/.gitconfig
+git reset --hard
+git checkout ${default_branch}
+git pull origin ${default_branch}
+git stash pop
+sudo chmod -R 755 $DOTFILES_PATH
 
 output::answer '✅ dotfiles updated to the latest version'

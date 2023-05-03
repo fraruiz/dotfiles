@@ -34,4 +34,6 @@ fi
 output::answer "Installing completions"
 "$DOTFILES_PATH/bin/dot" shell zsh reload
 
+sudo chmod -R 755 $DOTFILES_PATH
+sudo chown -R $(whoami) $DOTFILES_PATH
 git::setup_identity

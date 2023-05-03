@@ -14,12 +14,11 @@ sudo -v
 
 cd "$DOTFILES_PATH"
 
-default_branch = $(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
-
-git stash push git/.gitconfig
 git reset --hard
-git checkout ${default_branch}
-git pull origin ${default_branch}
-git stash pop
+git checkout master
+git pull origin master
+sudo chmod -R 755 $DOTFILES_PATH
+sudo chown -R $(whoami) $DOTFILES_PATH
+git::setup_identity
 
 output::answer '✅ dotfiles updated to the latest version'

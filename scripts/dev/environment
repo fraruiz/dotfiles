@@ -41,7 +41,24 @@ case $1 in
       fi
    	else
       if platform::is_macos; then
-			  output::error "Unsupported operating system 'macOS'"
+				
+				output::answer "Installing Colima"
+				dot self install colima
+				
+				output::answer "🐳 Installing Docker"
+				dot self install docker
+				
+				output::answer "🐳 Installing Docker Compose"
+				dot self install docker-compose
+				
+				output::answer "🐳 Installing Docker Compose"
+				dot self install docker-credential-helper
+				
+				docker context use colima
+				
+				if platform::command_exists docker; then
+        	output::write "✅ Docker installed!"
+      	fi
       elif platform::is_wsl; then
 			  output::error "We recommend using Docker Desktop for Windows."
 		  fi

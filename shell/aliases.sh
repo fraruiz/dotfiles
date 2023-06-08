@@ -38,6 +38,8 @@ alias dpsa='docker ps -a'
 alias dexec='dot docker exec'
 alias dprune='dot docker prune'
 alias dstop='dot docker stop'
+alias dreset='dot docker reset'
+alias dfix='dot docker fix'
 alias drm='dot docker rm'
 alias dcup='docker-compose up -d'
 

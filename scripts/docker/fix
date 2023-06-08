@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Reset Docker deamon
+#?? 1.0.0
+##?
+##? Usage:
+##?   fix
+docs::parse "$@"
+
+if platform::is_macos; then
+  colima delete
+  colima start
+fi

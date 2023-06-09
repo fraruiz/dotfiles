@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+source "$DOTFILES_PATH/scripts/core/_main.sh"
+
+##? Checkout to a local branch
+#?? 1.0.0
+##?
+##? Usage:
+##?   checkout
+docs::parse "$@"
+
+branch=$(git branch -a | awk '{if (NR!=1) print $(NF)}' | fzf --height 40%)
+
+git checkout $branch

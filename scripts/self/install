@@ -21,7 +21,7 @@ else
   install_linux_custom
 fi
 
-script::depends_on docpars fzf zsh python cargo
+script::depends_on docpars fzf zsh python3 cargo
 
 output::answer "Setting up symlinks"
 "$DOTFILES_PATH/bin/dot" symlinks apply | log::file "Applying symlinks" || true

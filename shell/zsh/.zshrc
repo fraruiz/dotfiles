@@ -10,12 +10,15 @@ setopt +o nomatch
 ZSH_AUTOSUGGEST_USE_ASYNC=true
 ZSH_HIGHLIGHT_MAXLENGTH=300
 
+# Prevent automatic compinit initialization before zimfw loads
+autoload -Uz compinit
+if [[ -z "$skip_global_compinit" ]]; then
+  skip_global_compinit=1
+fi
+
 source "$DOTFILES_PATH/shell/init.sh"
 
 source "$DOTFILES_PATH/shell/zsh/zim.zsh"
-
-# Add custom completions after zimfw has initialized completion module
-fpath=("$DOTFILES_PATH/shell/zsh/completions" $fpath)
 source "$DOTFILES_PATH/shell/zsh/bindings/dot.zsh"
 source "$DOTFILES_PATH/shell/zsh/bindings/reverse_search.zsh"
 source "$DOTFILES_PATH/shell/zsh/key-bindings.zsh"

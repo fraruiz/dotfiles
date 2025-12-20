@@ -12,9 +12,10 @@ ZSH_HIGHLIGHT_MAXLENGTH=300
 
 source "$DOTFILES_PATH/shell/init.sh"
 
-fpath=("$DOTFILES_PATH/shell/zsh/completions" $fpath)
-
 source "$DOTFILES_PATH/shell/zsh/zim.zsh"
+
+# Add custom completions after zimfw has initialized completion module
+fpath=("$DOTFILES_PATH/shell/zsh/completions" $fpath)
 source "$DOTFILES_PATH/shell/zsh/bindings/dot.zsh"
 source "$DOTFILES_PATH/shell/zsh/bindings/reverse_search.zsh"
 source "$DOTFILES_PATH/shell/zsh/key-bindings.zsh"
